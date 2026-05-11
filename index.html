@@ -1,0 +1,1192 @@
+<html lang="en"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Difficult Second Album — Pitch Deck</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&amp;family=DM+Sans:ital,wght@0,400;0,500;0,700&amp;display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0a;
+  --card-bg: #141414;
+  --cream: #f5f0e8;
+  --gold: #c8a94e;
+  --gold-dim: #8a7535;
+  --green: #4caf50;
+  --red: #e53935;
+  --amber: #ff9800;
+  --text: #e8e4dc;
+  --text-dim: #8a8580;
+  --accent: #c8a94e;
+  /* Spacing scale */
+  --sp-s: 16px;
+  --sp-m: 24px;
+  --sp-l: 32px;
+  --sp-xl: 48px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.slide {
+  height: 100vh;
+  padding: var(--sp-xl) 80px;
+  padding-top: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  border-bottom: 1px solid #222;
+  overflow: hidden;
+}
+
+.slide-number {
+  position: absolute;
+  top: 20px;
+  left: 40px;
+  font-family: 'DM Serif Display', serif;
+  font-size: 14px;
+  color: var(--text-dim);
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 72px;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: var(--sp-m);
+}
+
+h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 42px;
+  color: var(--cream);
+  line-height: 1.2;
+  margin-bottom: var(--sp-m);
+  text-align: center;
+}
+
+h3 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--gold);
+  margin-bottom: var(--sp-s);
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 22px;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-bottom: var(--sp-xl);
+  text-align: center;
+}
+
+p {
+  font-size: 16px;
+  max-width: 700px;
+  margin-bottom: var(--sp-s);
+  margin-left: auto;
+  margin-right: auto;
+  color: var(--text);
+  text-align: center;
+}
+
+.highlight {
+  color: var(--gold);
+  font-weight: 700;
+}
+
+.tag {
+  display: inline-block;
+  padding: 6px var(--sp-s);
+  background: var(--gold-dim);
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.slide-title {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.slide-title h1 {
+  font-size: 80px;
+  margin-bottom: 10px;
+}
+.slide-title .subtitle {
+  font-size: 26px;
+  margin-bottom: var(--sp-xl);
+}
+.studio-name {
+  font-size: 14px;
+  color: var(--text-dim);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-top: var(--sp-xl);
+}
+
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-m);
+  margin-top: var(--sp-m);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.intro-box {
+  background: var(--card-bg);
+  padding: var(--sp-m);
+  border-left: 3px solid var(--gold);
+}
+.intro-box h3 {
+  margin-bottom: 8px;
+  text-align: left;
+}
+.intro-box p {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 0;
+  text-align: left;
+  margin-left: 0;
+}
+
+.feature-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: var(--sp-m);
+  margin-top: var(--sp-m);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.feature-card {
+  background: var(--card-bg);
+  padding: var(--sp-m);
+  border-top: 3px solid var(--gold);
+}
+.feature-card h3 {
+  font-size: 18px;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.feature-card p {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-bottom: 0;
+  text-align: left;
+  line-height: 1.5;
+}
+
+.comp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-m);
+  margin-top: var(--sp-m);
+}
+.comp-box {
+  padding: var(--sp-m);
+  background: var(--card-bg);
+}
+.comp-box .stat {
+  font-family: 'DM Serif Display', serif;
+  font-size: 48px;
+  color: var(--gold);
+  margin-bottom: 5px;
+}
+.comp-box .stat-label {
+  font-size: 14px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--sp-s);
+  margin-top: var(--sp-m);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.data-card {
+  background: var(--card-bg);
+  padding: var(--sp-s);
+  text-align: center;
+}
+.data-card .stat {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  color: var(--gold);
+}
+.data-card .stat-label {
+  font-size: 12px;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 6px;
+}
+
+.team-approach {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-m);
+  margin-top: var(--sp-m);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.approach-box {
+  background: var(--card-bg);
+  padding: var(--sp-m);
+  border-left: 3px solid var(--gold);
+}
+.approach-box p {
+  font-size: 15px;
+  margin-bottom: var(--sp-s);
+}
+.approach-box p:last-child {
+  margin-bottom: 0;
+}
+
+.timeline {
+  display: flex;
+  gap: 0;
+  margin-top: var(--sp-m);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.timeline-phase {
+  flex: 1;
+  padding: var(--sp-m);
+  background: var(--card-bg);
+  border-right: 1px solid #222;
+  position: relative;
+}
+.timeline-phase:last-child { border-right: none; }
+.timeline-phase.done {
+  border-top: 3px solid var(--green);
+}
+.timeline-phase.current {
+  border-top: 3px solid var(--gold);
+}
+.timeline-phase.planned {
+  border-top: 3px solid var(--text-dim);
+}
+.phase-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+.phase-title {
+  font-family: 'DM Serif Display', serif;
+  font-size: 22px;
+  color: var(--cream);
+  margin-bottom: 14px;
+}
+.phase-items {
+  font-size: 14px;
+  color: var(--text-dim);
+  line-height: 1.7;
+}
+
+.ask-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-m);
+  margin-top: var(--sp-m);
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+.ask-box {
+  background: var(--card-bg);
+  padding: var(--sp-m);
+}
+.ask-box h3 {
+  margin-bottom: var(--sp-s);
+}
+.ask-item {
+  font-size: 15px;
+  color: var(--text-dim);
+  padding: 7px 0;
+  border-bottom: 1px solid #222;
+}
+.ask-item:last-child { border-bottom: none; }
+
+/* Quotes — hero (slide 2) use inline size override; supporting use base */
+.quote {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  font-style: italic;
+  color: var(--cream);
+  max-width: 650px;
+  line-height: 1.3;
+  margin: var(--sp-s) 0;
+  padding-left: var(--sp-m);
+  border-left: 3px solid var(--gold);
+}
+
+.card-example {
+  background: var(--card-bg);
+  padding: var(--sp-m);
+  max-width: 500px;
+  margin: var(--sp-m) auto;
+  border: 1px solid #333;
+  border-radius: 8px;
+}
+.card-header {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 12px;
+}
+.card-body {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: var(--cream);
+  line-height: 1.4;
+  margin-bottom: var(--sp-s);
+}
+.card-choices {
+  display: flex;
+  justify-content: space-between;
+}
+.card-choice {
+  font-size: 13px;
+  color: var(--text-dim);
+  padding: 6px 14px;
+  border: 1px solid #333;
+  border-radius: 4px;
+}
+.card-choice.left::before { content: "\2190 "; color: var(--gold); }
+.card-choice.right::after { content: " \2192"; color: var(--gold); }
+.card-consequences {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--sp-s);
+  margin-top: var(--sp-s);
+  padding-top: 12px;
+  border-top: 1px solid #222;
+}
+.card-consequence {
+  flex: 1;
+  font-size: 12px;
+  color: var(--text-dim);
+  line-height: 1.4;
+  font-style: italic;
+}
+.card-consequence.right { text-align: right; }
+.card-consequence-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--gold-dim);
+  margin-bottom: 4px;
+  font-style: normal;
+}
+
+.writing-sample {
+  border-left: 2px solid var(--gold-dim);
+  padding-left: 14px;
+}
+.writing-sample.recurring { border-left-color: var(--gold); }
+.writing-sample-header {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--gold);
+  margin-bottom: 5px;
+}
+.writing-sample-body {
+  font-family: 'DM Serif Display', serif;
+  font-size: 15px;
+  color: var(--cream);
+  line-height: 1.35;
+  margin-bottom: 6px;
+}
+.writing-sample-choices {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.writing-sample-choices .left::before { content: "\2190 "; color: var(--gold); }
+.writing-sample-choices .right::after { content: " \2192"; color: var(--gold); }
+.writing-sample-consequences {
+  display: flex;
+  gap: 14px;
+  font-size: 11px;
+  color: var(--text-dim);
+  font-style: italic;
+  line-height: 1.35;
+}
+.writing-sample-consequences > div { flex: 1; }
+.writing-sample-consequences > div:last-child { text-align: right; }
+.writing-sample-quote {
+  font-size: 11px;
+  color: var(--gold-dim);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  text-align: center;
+  margin-top: 4px;
+}
+
+.portrait-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: var(--sp-m) 0 12px;
+}
+.portrait-grid img {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #333;
+}
+.portrait-grid.compact { gap: 6px; margin: 0; }
+.portrait-grid.compact img { width: 40px; height: 40px; border-width: 1px; }
+.portrait-note {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-bottom: 4px;
+}
+.archetype-line {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text);
+  margin-bottom: var(--sp-m);
+}
+
+.screenshot-row {
+  display: flex;
+  gap: var(--sp-s);
+  justify-content: center;
+  margin: var(--sp-s) 0;
+}
+.screenshot-row img {
+  height: 320px;
+  width: auto;
+  border-radius: 10px;
+  border: 1px solid #333;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.slide-bg-collage {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  z-index: 0;
+  display: flex;
+  gap: 8px;
+  padding: var(--sp-l);
+  align-items: center;
+  justify-content: center;
+  opacity: 0.35;
+}
+.slide-bg-collage img {
+  flex: 1;
+  min-width: 0;
+  height: 70%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+.slide-bg-collage::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 20%, var(--bg) 75%);
+  pointer-events: none;
+}
+.slide > *:not(.slide-bg-collage) { position: relative; z-index: 1; }
+.slide:has(.slide-bg-collage) .comp-box,
+.slide:has(.slide-bg-collage) .data-card,
+.slide:has(.slide-bg-collage) .ask-box,
+.slide:has(.slide-bg-collage) .feature-card,
+.slide:has(.slide-bg-collage) .approach-box,
+.slide:has(.slide-bg-collage) .intro-box,
+.slide:has(.slide-bg-collage) .timeline-phase {
+  background: rgba(20, 20, 20, 0.8);
+}
+
+.landscape-table {
+  width: 100%;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+  margin-top: var(--sp-s);
+  line-height: 1.3;
+}
+.landscape-table th {
+  font-family: 'DM Serif Display', serif;
+  font-size: 13px;
+  color: var(--gold);
+  text-align: left;
+  padding: 8px 12px;
+  border-bottom: 2px solid #333;
+  font-weight: normal;
+  background: rgba(10, 10, 10, 0.75);
+}
+.landscape-table td {
+  font-size: 13px;
+  color: var(--text-dim);
+  padding: 8px 12px;
+  border-bottom: 1px solid #1a1a1a;
+  background: rgba(10, 10, 10, 0.75);
+}
+.landscape-table tr.highlight-row td {
+  color: var(--cream);
+  background: rgba(10, 10, 10, 0.85);
+  font-weight: 500;
+}
+.landscape-table .check { color: #4caf50; font-weight: 700; }
+.landscape-table .cross { color: #e53935; font-weight: 700; }
+
+@media print {
+  .slide { page-break-after: always; min-height: 100vh; }
+}
+</style>
+</head>
+<body>
+
+<!-- SLIDE 1: TITLE -->
+<div class="slide slide-title">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/pub_back_room1.webp" alt="">
+    <img src="assets/backgrounds/street_town_1.webp" alt="">
+    <img src="assets/backgrounds/rehearsal_f1_1.webp" alt="">
+    <img src="assets/backgrounds/studio_budget1.webp" alt="">
+    <img src="assets/backgrounds/large_club1.webp" alt="">
+  </div>
+  <h1>Difficult Second Album</h1>
+  <div class="subtitle">Manage a band. Swipe the decisions. Live with the consequences.</div>
+  <div class="quote" style="max-width: 520px; margin: 0 auto var(--sp-xl); text-align: center; border-left: none; border-top: 1px solid var(--gold-dim); border-bottom: 1px solid var(--gold-dim); padding: 14px var(--sp-m); font-size: 20px;">
+    “Better swiping results than on Tinder.”
+    <div style="font-style: normal; font-size: 12px; color: var(--text-dim); letter-spacing: 2px; margin-top: 8px;">— SOPHIE, PLAYTESTER</div>
+  </div>
+  <div>
+    <span class="tag">Mobile</span>
+    <span class="tag">Card Game</span>
+    <span class="tag">Management Sim</span>
+    <span class="tag">British Indie</span>
+    <span class="tag">Early 2000s</span>
+  </div>
+  <div class="studio-name">David Hawkins</div>
+</div>
+
+<!-- SLIDE 2: INTRODUCTION -->
+<div class="slide">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/pub_back_room4.webp" alt="">
+    <img src="assets/backgrounds/street_town_4.webp" alt="">
+    <img src="assets/backgrounds/openmic7.webp" alt="">
+    <img src="assets/backgrounds/van_2.webp" alt="">
+  </div>
+  <span class="slide-number">01 — INTRODUCTION</span>
+  <h2>The Elevator Pitch</h2>
+  <p style="font-size: 20px; max-width: 800px;">
+    <span class="highlight">Reigns meets Rockstar Ate My Hamster.</span> Card-swipe band management. You've inherited money and decided to manage a British indie band. Every decision is a swipe — left or right. Build the band from pub back rooms to stadium stages across six in-game years. Early 2000s. Demo tapes. Sticky floors. No smartphones.
+  </p>
+  <div style="display: flex; gap: var(--sp-m); max-width: 800px; margin: var(--sp-s) auto var(--sp-s);">
+    <div style="flex: 1;">
+      <div class="quote" style="font-size: 19px;">"A nostalgic celebration of a legendary era that doesn't get enough mention for how much has changed in music and social culture."</div>
+      <p style="font-size: 13px; color: var(--text-dim);">— Dave, playtester</p>
+    </div>
+    <div style="flex: 1;">
+      <div class="quote" style="font-size: 19px;">"It definitely draws you in for the 'one more turn' feeling. The quick swipe decisions are very moreish."</div>
+      <p style="font-size: 13px; color: var(--text-dim);">— Early build playtester</p>
+    </div>
+  </div>
+  <p style="font-size: 14px; color: var(--gold); text-align: center; margin-bottom: var(--sp-m); font-weight: 600;">Playtesters rated writing 4.5/5, engagement 4.3/5. Four of ten played to content exhaustion.</p>
+  <div class="intro-grid" style="max-width: 1080px; margin: 0 auto;">
+    <div class="intro-box">
+      <h3>Format</h3>
+      <p>Card-swipe decisions. Five meters (money, followers, morale, ego, reputation). Milestone-driven phases: sign a deal → Rising, enter the national chart → Peak. Four phases: Formation → Rising → Peak → Legacy.</p>
+    </div>
+    <div class="intro-box">
+      <h3>Platform</h3>
+      <p>Mobile-first (React Native/Expo). Android and iOS in active testing via OTA updates. Natural path to PC (Steam) and Switch. Reigns proved the format works across all platforms.</p>
+    </div>
+    <div class="intro-box">
+      <h3>Status</h3>
+      <p>v0.6.46. Formation and Rising fully playable. Peak partially implemented. Active playtesting, with one tester reaching week 261 (five in-game years) before hitting content limits. OTA updates shipping live to testers weekly.</p>
+    </div>
+    <div class="intro-box">
+      <h3>Business Model</h3>
+      <p>Premium purchase. No ads, no energy systems, no microtransactions. Optional paid content packs post-launch (new eras, licensed editions). The game respects the player's time and money.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 3: WHAT MAKES IT DIFFERENT -->
+<div class="slide">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/rehearsal_f1_2.webp" alt="">
+    <img src="assets/backgrounds/pub_back_room5.webp" alt="">
+    <img src="assets/backgrounds/studio_budget2.webp" alt="">
+    <img src="assets/backgrounds/van_3.webp" alt="">
+    <img src="assets/backgrounds/rehearsal_r1_3.webp" alt="">
+  </div>
+  <span class="slide-number">02 — THE GAME</span>
+  <h2 style="margin-bottom: var(--sp-s);">The Writing</h2>
+
+  <div style="display: flex; gap: 24px; align-items: center; flex: 1; min-height: 0; margin: var(--sp-s) auto; max-width: 80%; width: 100%;">
+    <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+    <div style="display: flex; flex-direction: column; gap: var(--sp-s); max-width: 520px; width: 100%;">
+      <div class="card-example" style="margin: 0; max-width: none;">
+        <div class="card-header">THE BAND</div>
+        <div class="card-body">The kick drum pedal goes through the rehearsal room floor. Exact width of the pedal. Floorboard was compromised. The landlord does not know.</div>
+        <div class="card-choices">
+          <span class="card-choice left">Tell the landlord</span>
+          <span class="card-choice right">Move the rug</span>
+        </div>
+        <div class="card-consequences">
+          <div class="card-consequence"><div class="card-consequence-label">← Result</div>The landlord charges sixty for the repair. The floor was worth forty.</div>
+          <div class="card-consequence right"><div class="card-consequence-label">Result →</div>The rug covers the hole. The kick drum is repositioned. The rug was already covering a previous hole.</div>
+        </div>
+      </div>
+      <div class="card-example" style="margin: 0; max-width: none; border-left: 3px solid var(--gold);">
+        <div class="card-header">SUPERFAN SUSAN — RECURRING</div>
+        <div class="card-body">Your number one fan Susan knows things. Gig dates not yet announced. The label’s phone number. Where Jarvis gets coffee.</div>
+        <div class="card-choices">
+          <span class="card-choice left">Change the subject</span>
+          <span class="card-choice right">Ask how</span>
+        </div>
+        <div class="card-consequence-label" style="margin-top: 12px; text-align: center;">“I LOVE superfan Susan!” — Sooz, playtester</div>
+      </div>
+    </div>
+    </div>
+    <div style="flex: 1; display: flex; gap: 20px; justify-content: center; align-items: center; height: 100%; min-height: 0;">
+      <img src="screenshots/2026-04-10 19.24.17.jpg" alt="My Feelings — gold standard card with hero portrait" style="max-height: 100%; max-width: 48%; width: auto; height: auto; object-fit: contain; border-radius: 12px; border: 1px solid #333; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+      <img src="screenshots/2026-04-10 19.24.42.jpg" alt="Dual-character band dynamics card" style="max-height: 100%; max-width: 48%; width: auto; height: auto; object-fit: contain; border-radius: 12px; border: 1px solid #333; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+    </div>
+  </div>
+
+  <!-- Artist Portrait Grid -->
+  <div class="portrait-grid" style="margin: 0 auto; max-width: 1080px;">
+    <img src="assets/portraits/alana_morris.webp" alt="Alana Morris">
+    <img src="assets/portraits/amy_wino_house.webp" alt="Amy Wino House">
+    <img src="assets/portraits/bill_collies.webp" alt="Bill Collies">
+    <img src="assets/portraits/boss_swinesteen.webp" alt="Boss Swinesteen">
+    <img src="assets/portraits/cheri_cowes.webp" alt="Cheri Cowes">
+    <img src="assets/portraits/courtney_scove.webp" alt="Courtney Scove">
+    <img src="assets/portraits/dan_allbran.webp" alt="Dan Allbran">
+    <img src="assets/portraits/djorg.webp" alt="Djorg">
+    <img src="assets/portraits/fats.webp" alt="Fats">
+    <img src="assets/portraits/gracie_may.webp" alt="Gracie May">
+    <img src="assets/portraits/gwennie_stef.webp" alt="Gwennie Stef">
+    <img src="assets/portraits/izzy_raw.webp" alt="Izzy Raw">
+    <img src="assets/portraits/jarvis_crockery.webp" alt="Jarvis Crockery">
+    <img src="assets/portraits/jerri_allswell.webp" alt="Jerri Allswell">
+    <img src="assets/portraits/john_tomes.webp" alt="John Tomes">
+    <img src="assets/portraits/kay_bash.webp" alt="Kay Bash">
+    <img src="assets/portraits/kylie_minow.webp" alt="Kylie Minow">
+    <img src="assets/portraits/lee_galway.webp" alt="Lee Galway">
+    <img src="assets/portraits/len_krav.webp" alt="Len Krav">
+    <img src="assets/portraits/macca.webp" alt="Macca">
+    <img src="assets/portraits/maradonna.webp" alt="Maradonna">
+    <img src="assets/portraits/pj_harte.webp" alt="PJ Harte">
+    <img src="assets/portraits/rick_swagger.webp" alt="Rick Swagger">
+    <img src="assets/portraits/scruffy_lad.webp" alt="Scruffy Lad">
+    <img src="assets/portraits/shirley_mansoon.webp" alt="Shirley Mansoon">
+    <img src="assets/portraits/skinn.webp" alt="Skinn">
+    <img src="assets/portraits/stu_wunderbar.webp" alt="Stu Wunderbar">
+    <img src="assets/portraits/the_artist.webp" alt="The Artist">
+    <img src="assets/portraits/tina_screamer.webp" alt="Tina Screamer">
+    <img src="assets/portraits/tom_yorkie.webp" alt="Tom Yorkie">
+    <img src="assets/portraits/trixie.webp" alt="Trixie">
+  </div>
+  <p class="archetype-line" style="margin: 10px auto 0; font-size: 13px; text-align: center;">5 archetypes: <span class="highlight">Talent</span>, <span class="highlight">Quiet One</span>, <span class="highlight">Hired Hand</span>, <span class="highlight">Loose Cannon</span>, <span class="highlight">Legacy Act</span>. AI-generated placeholder art — commissioned illustrations to follow funding.</p>
+</div>
+
+<!-- SLIDE 4: SYSTEMS -->
+<div class="slide">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/rehearsal_r1_1.webp" alt="">
+    <img src="assets/backgrounds/local_club1.webp" alt="">
+    <img src="assets/backgrounds/studio_proper1.webp" alt="">
+    <img src="assets/backgrounds/label_office_2.webp" alt="">
+    <img src="assets/backgrounds/mid_hall2.webp" alt="">
+  </div>
+  <span class="slide-number">03 — SYSTEMS</span>
+  <h2 style="margin-bottom: var(--sp-s);">Beneath the Swipe</h2>
+
+  <div style="display: flex; gap: 40px; flex: 1; min-height: 0; margin: var(--sp-s) auto; align-items: stretch; max-width: 80%; width: 100%;">
+    <div style="flex: 1; display: grid; grid-template-columns: 1fr 1fr; gap: var(--sp-s); align-content: center;">
+      <div class="feature-card" style="padding: 18px;">
+        <h3>Gig Circuit</h3>
+        <p>31 venues across 7 tiers — pub back rooms to stadiums. The band outgrows each tier to reach the next. Transparent receipts. Pre-show tension cards. Gigs give money and followers; meters only move through card decisions.</p>
+      </div>
+      <div class="feature-card" style="padding: 18px;">
+        <h3>Recording &amp; Release</h3>
+        <p>Studio lockout with timed speed rounds. 96 recording cards. Procedural cover art. EP/album naming. Single selection. Two-chart sales engine with star-scaled decline curves. Quality earned through skill and gear.</p>
+      </div>
+      <div class="feature-card" style="padding: 18px;">
+        <h3>Label Deals</h3>
+        <p>10 labels across 5 tiers. EP → EP → album cycles. Recoupment, royalties, performance evaluation. Get dropped for poor sales. Choose to stay loyal or chase a bigger deal.</p>
+      </div>
+      <div class="feature-card" style="padding: 18px;">
+        <h3>Publicity &amp; Press</h3>
+        <p>20 publicity stunt types. After every single, a promotional push — radio, record shops, TV appearances — with timed speed-round decisions. Bold choices boost sales; safe choices can hurt. 60+ newspaper headlines react to the band's moves.</p>
+      </div>
+      <div class="feature-card" style="padding: 18px;">
+        <h3>Awards &amp; Ceremonies</h3>
+        <p>Brut Awards (February) and NMW Awards (September). Interactive ceremonies with speed-round decision moments during the show. Winning depends on chart performance. The moment the band realises they made it — or didn't.</p>
+      </div>
+      <div class="feature-card" style="padding: 18px;">
+        <h3>Seasonal &amp; Recurring</h3>
+        <p>Christmas content live (61 cards, holiday break mechanics, festive chart battles). Superfan Susan recurring as the band's Number One Fan. More seasonal content in development: Valentine's, Easter, Bonfire Night, Jubilee 2002.</p>
+      </div>
+    </div>
+    <div style="flex: 1; display: flex; flex-direction: row; gap: 12px; justify-content: center; align-items: center; min-height: 0;">
+      <img src="screenshots/2026-04-10 19.24.46.jpg" alt="Recording studio session" style="width: calc(50% - 6px); height: auto; max-height: 100%; object-fit: contain; object-position: top; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+      <img src="screenshots/2026-04-10 19.25.33.jpg" alt="Speed round with timer" style="width: calc(50% - 6px); height: auto; max-height: 100%; object-fit: contain; object-position: top; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);">
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 5: IN-GAME -->
+<div class="slide" style="padding-top: 100px;">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/meeting_pub_1.webp" alt="">
+    <img src="assets/backgrounds/meeting_radio_1.webp" alt="">
+    <img src="assets/backgrounds/pub_openmic1.webp" alt="">
+    <img src="assets/backgrounds/tv_studio.webp" alt="">
+    <img src="assets/backgrounds/studio_top2.webp" alt="">
+  </div>
+  <span class="slide-number">04 — IN-GAME</span>
+  <h2 style="margin-bottom: var(--sp-s);">Every Card Is a Decision</h2>
+  <div style="display: flex; gap: 12px; flex: 1; min-height: 0; margin: var(--sp-s) auto; align-items: center; max-width: 80%; width: 100%;">
+    <div style="flex: 1.5; display: flex; flex-direction: column; gap: var(--sp-s); justify-content: space-between; max-width: 500px; max-height: 400">
+      <div class="feature-card" style="padding: 14px 20px;">
+        <h3 style="margin-bottom: 6px;">The Writing</h3>
+        <p>850+ unique cards across 8 pools, written to a strict style guide (Card Bible v5.2). Deadpan narrator who loves music. The humour comes from accuracy, not jokes. 60+ newspaper headlines. World-building cards for early 2000s texture.</p>
+      </div>
+      <div class="feature-card" style="padding: 14px 20px;">
+        <h3 style="margin-bottom: 6px;">The Era</h3>
+        <p>January 2000. Demo tapes, fanzines, sticky floors. Napster, Friends Reunited, Nokia 3310s. Pre-smartphone, pre-streaming. The specificity is the point. A legendary era nobody has made a game about.</p>
+      </div>
+      <div class="feature-card" style="padding: 14px 20px;">
+        <h3 style="margin-bottom: 6px;">The Depth</h3>
+        <p>Looks like a card game. Runs like a simulation. Rehearsal, gear, recording, sales, charts, labels, crises, band dynamics. 109 crisis cards when meters hit danger zones. 20+ multi-step narrative chains. The player doesn't see the systems — they just feel that decisions matter.</p>
+      </div>
+    </div>
+    <img src="screenshots/2026-04-10 19.24.27.jpg" alt="The Ordinary Damage — Formation" style="flex: 1; min-width: 0; height: 100%; object-fit: contain; object-position: top; border-radius: 12px;">
+    <img src="screenshots/2026-04-10 19.25.07.jpg" alt="The Cold Letters — Peak" style="flex: 1; min-width: 0; height: 100%; object-fit: contain; object-position: top; border-radius: 12px;">
+  </div>
+</div>
+
+<!-- SLIDE 6: MARKET & LANDSCAPE -->
+<div class="slide">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/meeting_record_shop_1.webp" alt="">
+    <img src="assets/backgrounds/label_office_1.webp" alt="">
+    <img src="assets/backgrounds/pub_stags_head.webp" alt="">
+    <img src="assets/backgrounds/university_venue2.webp" alt="">
+    <img src="assets/backgrounds/arena1.webp" alt="">
+  </div>
+  <span class="slide-number">05 — MARKET</span>
+  <h2>Why This Game, Why Now</h2>
+
+  <h3>Competitive Landscape</h3>
+  <p style="font-size: 16px; color: var(--text-dim); margin-bottom: 15px;">Music management games exist on PC. Card-swipe games exist on mobile. Nobody has combined them with grounded writing and genuine simulation depth — for a culturally specific audience.</p>
+
+  <table class="landscape-table" style="max-width: 1080px; margin: 0 auto;">
+    <thead>
+      <tr>
+        <th style="width: 22%;">Game</th>
+        <th style="width: 13%;">Platform</th>
+        <th style="width: 13%;">Card-Swipe</th>
+        <th style="width: 13%;">Sim Depth</th>
+        <th style="width: 13%;">Narrative</th>
+        <th style="width: 26%;">Notes</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="color: var(--text);">Reigns (1.8M+ sold)</td>
+        <td>Mobile / PC</td>
+        <td class="check">✓</td>
+        <td class="cross">✗</td>
+        <td class="cross">✗</td>
+        <td>Format pioneer. Shallow systems, IP-driven sequels.</td>
+      </tr>
+      <tr>
+        <td style="color: var(--text);">Idol Manager</td>
+        <td>PC only</td>
+        <td class="cross">✗</td>
+        <td class="check">✓</td>
+        <td class="check">✓</td>
+        <td>Deepest music sim. Anime idol niche. Traditional UI.</td>
+      </tr>
+      <tr>
+        <td style="color: var(--text);">Music Inc / Band Manager</td>
+        <td>Mobile</td>
+        <td class="cross">✗</td>
+        <td class="cross">✗</td>
+        <td class="cross">✗</td>
+        <td>Shallow clickers. No writing, no craft.</td>
+      </tr>
+      <tr>
+        <td style="color: var(--text);">Rockstar Ate My Hamster</td>
+        <td>8-bit (1988)</td>
+        <td class="cross">✗</td>
+        <td class="cross">✗</td>
+        <td class="check">✓</td>
+        <td>The spiritual ancestor. Nobody updated it in 38 years.</td>
+      </tr>
+      <tr class="highlight-row">
+        <td><span class="highlight">Difficult Second Album</span></td>
+        <td>Mobile / PC</td>
+        <td class="check">✓</td>
+        <td class="check">✓</td>
+        <td class="check">✓</td>
+        <td>Unoccupied intersection. Grounded era. Real writing.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 style="margin-top: 56px; padding-top: 28px; border-top: 1px solid #2a2a2a;">Target Audience</h3>
+  <div class="feature-row" style="max-width: 1080px; margin: 0 auto;">
+    <div class="feature-card" style="border-top-color: var(--green);">
+      <h3 style="color: var(--green);">The Nostalgic</h3>
+      <p>Adults 30–50 who were there. British indie alumni, music press readers, pub gig veterans, lapsed band members. They want to remember it, argue with it, feel it. The audience for whom this game is a memory.</p>
+    </div>
+    <div class="feature-card" style="border-top-color: var(--amber);">
+      <h3 style="color: var(--amber);">The Category Fans</h3>
+      <p>Premium indie mobile gamers and narrative game fans. The audience that bought Reigns, Florence, A Dark Room, Disco Elysium. They follow the format and want more of it, executed well. The audience for whom this game is a genre they trust.</p>
+    </div>
+    <div class="feature-card" style="border-top-color: var(--text-dim);">
+      <h3 style="color: var(--text-dim);">The Culturally Curious</h3>
+      <p>Younger players who didn't live through the era but are drawn to it through music, film, or parents' record collections. International audiences discovering British indie culture. The audience for whom this game is a window.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 7: VALIDATION -->
+<div class="slide">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/large_club4.webp" alt="">
+    <img src="assets/backgrounds/rehearsal_r2_1.webp" alt="">
+    <img src="assets/backgrounds/studio_top1.webp" alt="">
+    <img src="assets/backgrounds/concert_hall5.webp" alt="">
+    <img src="assets/backgrounds/stadium3.webp" alt="">
+  </div>
+  <span class="slide-number">06 — VALIDATION</span>
+  <h2>What I Know Works</h2>
+  <p style="background: rgba(0,0,0,0.5); border-radius: 8px; padding: 8px 20px;">Balance validated through Monte Carlo simulation (1,000 runs × 100 weeks, covering Formation, Rising, and Peak transition). Systems tested, economy modelled, progression pacing calibrated. Live playtester feedback loop with weekly OTA updates.</p>
+
+  <div class="data-grid">
+    <div class="data-card">
+      <div class="stat">850+</div>
+      <div class="stat-label">Cards Written</div>
+    </div>
+    <div class="data-card">
+      <div class="stat">109</div>
+      <div class="stat-label">Crisis Cards</div>
+    </div>
+    <div class="data-card">
+      <div class="stat">96</div>
+      <div class="stat-label">Recording Cards</div>
+    </div>
+    <div class="data-card">
+      <div class="stat">31</div>
+      <div class="stat-label">Venues / 7 Tiers</div>
+    </div>
+  </div>
+  <div class="data-grid" style="margin-top: 20px; grid-template-columns: repeat(4, 1fr);">
+    <div class="data-card">
+      <div class="stat">Wk 13</div>
+      <div class="stat-label">Median Deal Signed</div>
+    </div>
+    <div class="data-card">
+      <div class="stat">Wk 73</div>
+      <div class="stat-label">Median Peak Transition</div>
+    </div>
+    <div class="data-card">
+      <div class="stat">4 of 10</div>
+      <div class="stat-label">Hit the content wall</div>
+    </div>
+    <div class="data-card">
+      <div class="stat">Wk 261</div>
+      <div class="stat-label">5 in-game years</div>
+    </div>
+  </div>
+  <p style="margin-top: 20px; font-size: 15px; color: var(--text-dim);">Peak requires a genuine 4★ recording — skill, gear, and audience must align. One playtester reached week 261 (five in-game years) before asking for more content. Four out of ten testers played until they hit the edges of what's built.</p>
+
+  <div style="display: flex; gap: var(--sp-m); margin: var(--sp-m) auto 0; max-width: 80%; width: 100%;">
+    <div style="flex: 1;">
+      <div class="quote">"It's addictive. Having control is satisfying."</div>
+      <p style="font-size: 13px; color: var(--text-dim);">— Claire, playtester</p>
+    </div>
+    <div style="flex: 1;">
+      <div class="quote">"Bedtime made me want to stop."</div>
+      <p style="font-size: 13px; color: var(--text-dim);">— playtester</p>
+    </div>
+    <div style="flex: 1;">
+      <div class="quote">"Loved the writing. Hilarious."</div>
+      <p style="font-size: 13px; color: var(--text-dim);">— playtester</p>
+    </div>
+  </div>
+  <p style="font-size: 14px; color: var(--gold); text-align: center; font-weight: 600; margin-top: var(--sp-s);">Multiple testers used "addictive" unprompted. Writing rated 4.5/5 across the group. 12 testers and counting.</p>
+</div>
+
+<!-- SLIDE 8: TEAM -->
+<div class="slide">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/studio_budget1.webp" alt="">
+    <img src="assets/backgrounds/rehearsal_f2_1.webp" alt="">
+    <img src="assets/backgrounds/street_town_2.webp" alt="">
+    <img src="assets/backgrounds/van_1.webp" alt="">
+  </div>
+  <span class="slide-number">07 — DEVELOPER &amp; APPROACH</span>
+  <h2>Who and How</h2>
+
+  <div class="team-approach">
+    <div class="approach-box">
+      <h3>The Developer</h3>
+      <p><strong>David Hawkins.</strong> Background in IT infrastructure and systems architecture — systems thinking, production environments, shipping things that work under pressure.</p>
+      <p>Founded Daft Disco — a disco fashion brand with a real product range and paying customers. Knows how to build and ship.</p>
+      <p>Lived through the era this game portrays. Grew up on the scene, remembers the magazines, the venues, the rivalries. The specificity comes from experience.</p>
+      <p>First game, but not a first project. AI-assisted development closed the gap between design ability and code output.</p>
+    </div>
+    <div class="approach-box">
+      <h3>The Workflow</h3>
+      <p>AI-assisted development. Claude for design and writing; Claude Code for implementation. Every design decision, every card's writing voice, every balance choice is human-led.</p>
+      <p>Every system simulation-tested. Every card written to a living style guide (Card Bible v5.2).</p>
+      <p><span class="highlight">Bug reported Saturday morning. Investigated, fixed, shipped to all testers by Saturday afternoon.</span> OTA deployment means patches reach players in under an hour.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top: var(--sp-l);">What This Means for a Publisher</h3>
+  <div class="feature-row" style="grid-template-columns: 1fr 1fr;">
+    <div class="feature-card">
+      <h3>Low Risk, Fast Iteration</h3>
+      <p>Small-team output at solo-developer cost. Low burn rate. Fast iteration cycles. The project doesn't need a large team or long runway.</p>
+      <p style="margin-top: var(--sp-s);">The modern toolchain is a publishing advantage — faster iteration, lower overhead, proven velocity. Two months of focused development produced what you're looking at.</p>
+    </div>
+    <div class="feature-card">
+      <h3>Art &amp; Audio (Funded Through Partnership)</h3>
+      <p>Current AI placeholder art establishes visual direction. Target style: Gorillaz meets Disco Elysium — commissioned character work funded through the publishing deal. <span class="highlight">No AI art in the final shipped game.</span></p>
+      <p style="margin-top: var(--sp-s);">Audio: placeholder tracks and ambience in place throughout. Full game: commissioned adaptive music stems by a musician with authentic era knowledge, quality reflecting the band's star rating.</p>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 9: PRODUCTION -->
+<div class="slide">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/openmic11.webp" alt="">
+    <img src="assets/backgrounds/small_club4.webp" alt="">
+    <img src="assets/backgrounds/mid_hall3.webp" alt="">
+    <img src="assets/backgrounds/arena5.webp" alt="">
+    <img src="assets/backgrounds/stadium4.webp" alt="">
+  </div>
+  <span class="slide-number">08 — PRODUCTION</span>
+  <h2>Where I Am,<br>What's Next</h2>
+  <p style="font-size: 16px; color: var(--text-dim); margin-bottom: 10px;">Game is playable and tested across two phases. Estimated 6 months to content-complete. 18 months of partnership runway covers completion, launch, and post-launch support.</p>
+
+  <div class="timeline" style="max-width: 1600px; margin: var(--sp-s) auto;">
+    <div class="timeline-phase done">
+      <div class="phase-label">Complete</div>
+      <div class="phase-title" style="text-align: center;">Formation &amp; Rising</div>
+      <div class="phase-items" style="text-align: center;">
+        Core engine &amp; card draw system<br>
+        31 venues across 7 tiers<br>
+        Recording &amp; release pipeline<br>
+        10 labels across 5 tiers<br>
+        Two-chart sales system<br>
+        109 crisis cards<br>
+        850+ unique cards across 8 pools<br>
+        20 publicity stunt types<br>
+        20+ chain card sequences<br>
+        Awards system (Brut + NMW)<br>
+        Christmas / seasonal content<br>
+        Number One Fan (recurring character)<br>
+        31 artists, 5 archetypes<br>
+        4-channel audio system<br>
+        Discography jukebox<br>
+        Live beta on iOS &amp; Android
+      </div>
+    </div>
+    <div class="timeline-phase current">
+      <div class="phase-label">Now &amp; Next</div>
+      <div class="phase-title" style="text-align: center;">Peak &amp; Legacy</div>
+      <div class="phase-items" style="text-align: center;">
+        Editorial card pass<br>
+        Balancing<br>
+        Battle of the bands events<br>
+        Additional seasonal content<br>
+        Active tester pool<br>
+        Peak phase decision content<br>
+        Legacy phase design + content<br>
+        Touring mechanic (UK + international)<br>
+        Arena / stadium gig content<br>
+        Commissioned portraits + bg art<br>
+        Custom audio + music tracks
+      </div>
+    </div>
+    <div class="timeline-phase planned">
+      <div class="phase-label">Launch</div>
+      <div class="phase-title" style="text-align: center;">Release</div>
+      <div class="phase-items" style="text-align: center;">
+        iOS + Android release<br>
+        Steam / Switch assessment<br>
+        Marketing campaign<br>
+        Press outreach<br>
+        Post-launch content updates<br>
+        Localisation rollout
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 10: FRANCHISE -->
+<div class="slide">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/studio_proper1.webp" alt="">
+    <img src="assets/backgrounds/arena1.webp" alt="">
+    <img src="assets/backgrounds/street_town_3.webp" alt="">
+    <img src="assets/backgrounds/stadium2.webp" alt="">
+  </div>
+  <span class="slide-number">09 — WHAT COMES NEXT</span>
+  <h2 style="margin-bottom: var(--sp-s);">Beyond the First Release</h2>
+  <p style="max-width: 750px;">The engine and format are era-agnostic. The entire card-swipe band management system scales to other eras, genres, and cultures. If the first game works, the framework supports sequels and licensed editions.</p>
+
+  <div style="display: flex; gap: 12px; align-items: center; justify-content: center; flex: 1; min-height: 0; max-width: 80%; width: 100%; margin: var(--sp-s) auto;">
+    <div style="flex: 1; display: flex; justify-content: center; align-items: center;">
+      <div style="display: flex; flex-direction: column; gap: var(--sp-m); max-width: 520px; width: 100%;">
+        <div>
+          <h3 style="color: var(--gold); margin-bottom: 8px; text-align: left;">Sequel Concepts</h3>
+          <p style="font-size: 15px; color: var(--text-dim); margin: 0; text-align: left;">The format supports follow-up games. A modern-day version with contemporary artist parodies, social media, streaming royalties. The 1960s with rock ’n’ roll roots, psychedelia. The American indie underground of the early 90s. Same engine, new cards, new tone.</p>
+        </div>
+        <div>
+          <h3 style="color: var(--gold); margin-bottom: 8px; text-align: left;">Licensed Editions</h3>
+          <p style="font-size: 15px; color: var(--text-dim); margin: 0; text-align: left;">Real band stories in the same format. Precedent: Reigns × Game of Thrones, Reigns × The Witcher. The engine handles any music narrative — it needs the right IP partner. Documentary-style band histories, fictional music universes, or artist-approved career retrospectives.</p>
+        </div>
+      </div>
+    </div>
+    <img src="screenshots/2026-04-10 19.24.50.jpg" alt="Newspaper headline flash" style="flex: 1; min-width: 0; height: 100%; object-fit: contain; object-position: top; border-radius: 12px;">
+    <img src="screenshots/2026-04-10 19.25.04.jpg" alt="Milestone — advance recouped" style="flex: 1; min-width: 0; height: 100%; object-fit: contain; object-position: top; border-radius: 12px;">
+  </div>
+</div>
+
+<!-- SLIDE 11: GAMEPLAY VIDEO -->
+<div class="slide">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/pub_back_room1.webp" alt="">
+    <img src="assets/backgrounds/studio_budget1.webp" alt="">
+    <img src="assets/backgrounds/small_club3.webp" alt="">
+    <img src="assets/backgrounds/large_club1.webp" alt="">
+  </div>
+  <span class="slide-number">10 — GAMEPLAY</span>
+  <h2>See It In Motion</h2>
+  <div class="subtitle" style="max-width: 700px; margin-left: auto; margin-right: auto; text-align: center;">A two-minute playthrough from pub to signing.</div>
+  <p style="font-size: 18px; max-width: 800px; margin-top: var(--sp-m);">The full arc — Formation pub gig, first recording session, label signing — in under two minutes.</p>
+  <div style="margin: var(--sp-l) auto 0; padding: var(--sp-l); background: var(--card-bg); border: 1px solid var(--gold); border-radius: 4px; max-width: 720px; text-align: center;">
+    <a href="https://vimeo.com/1189590096" target="_blank" rel="noopener" style="color: var(--gold); font-size: 18px; font-weight: 700; letter-spacing: 2px; text-decoration: none;">▶ Watch Trailer</a>
+  </div>
+</div>
+
+<!-- SLIDE 12: THE ASK -->
+<div class="slide">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/small_club3.webp" alt="">
+    <img src="assets/backgrounds/concert_hall3.webp" alt="">
+    <img src="assets/backgrounds/studio_proper1.webp" alt="">
+    <img src="assets/backgrounds/mid_hall4.webp" alt="">
+    <img src="assets/backgrounds/stadium1.webp" alt="">
+  </div>
+  <span class="slide-number">11 — THE ASK</span>
+  <h2>What I'm Looking For</h2>
+  <p style="font-size: 20px; max-width: 800px; margin-bottom: 30px;">A publishing partnership. Development funding through completion and a supported post-launch window. Budget for commissioned art, audio, and QA at scale. Marketing and storefront relationships. Revenue share post-launch.</p>
+
+  <div class="ask-grid">
+    <div class="ask-box">
+      <h3>Publisher Provides</h3>
+      <div class="ask-item"><strong>Development funding</strong> — ~12 months covering content completion, commissioned art and audio, QA and launch preparation</div>
+      <div class="ask-item"><strong>Post-launch support</strong> — 6 months funded dev time after release, covering bug fixes, platform compliance, and community support while royalties begin to flow</div>
+      <div class="ask-item"><strong>Art budget</strong> — commissioned portraits (31 artists × 4 emotions), NPC portraits, 50+ venue backgrounds in a cohesive style</div>
+      <div class="ask-item"><strong>Audio budget</strong> — commissioning real music tracks and stems to replace AI placeholders currently in place. Adaptive music system already built — needs real recordings, not new plumbing.</div>
+      <div class="ask-item"><strong>Marketing &amp; press</strong> — the game's strength (writing, era, tone) needs someone who knows how to sell craft to the right audience</div>
+      <div class="ask-item"><strong>QA at scale</strong> — beyond the current friends-and-family tester pool; cross-device, regression, localisation testing</div>
+      <div class="ask-item"><strong>Legal &amp; clearance</strong> — guidance on referential content and IP clearance ahead of release</div>
+      <div class="ask-item"><strong>Platform strategy</strong> — iOS/Android submissions, Steam / Switch assessment, localisation rollout</div>
+    </div>
+    <div class="ask-box">
+      <h3>What You Get</h3>
+      <div class="ask-item">A game with genuine writing quality in a proven commercial format</div>
+      <div class="ask-item">An unoccupied market position — no card-swipe music management game exists for this era or audience</div>
+      <div class="ask-item">A developer who ships fast, iterates on feedback within hours, and has low overhead</div>
+      <div class="ask-item">A validated build with simulation-tested systems, 850+ cards written, and live playtesting proving compulsion</div>
+      <div class="ask-item">Multi-platform potential — mobile-first with PC and console assessment at launch</div>
+      <div class="ask-item">Sequel and franchise potential with era-agnostic engine and designed follow-ups</div>
+      <div class="ask-item">Premium model — one-time purchase, no microtransactions, no ads, no predatory monetisation</div>
+      <div class="ask-item">A partner who understands the difference between a design tool and a creative director — creative control remains human-led</div>
+    </div>
+  </div>
+</div>
+
+<!-- SLIDE 13: CLOSING -->
+<div class="slide slide-title">
+  <div class="slide-bg-collage">
+    <img src="assets/backgrounds/van_1.webp" alt="">
+    <img src="assets/backgrounds/openmic5.webp" alt="">
+    <img src="assets/backgrounds/mid_hall2.webp" alt="">
+    <img src="assets/backgrounds/concert_hall1.webp" alt="">
+    <img src="assets/backgrounds/stadium1.webp" alt="">
+  </div>
+  <h1 style="font-size: 72px;">Nobody asked for an encore.</h1>
+  <div class="subtitle" style="max-width: 600px; margin: 0 auto; font-size: 18px;">Let's make the one they didn't know they wanted.</div>
+  <div style="width: 120px; height: 3px; background: var(--gold); margin: var(--sp-l) auto;"></div>
+  <div style="margin-top: var(--sp-m);">
+    <p style="text-align: center; color: var(--cream); font-size: 18px; font-weight: 500;">
+      Playable demo available on request. TestFlight (iOS) or APK (Android).
+    </p>
+    <p style="text-align: center; color: var(--cream); font-size: 16px; font-weight: 500; margin-top: 6px;">
+      Trailer: <a href="https://vimeo.com/1189590096" target="_blank" rel="noopener" style="color: var(--gold); letter-spacing: 1px; text-decoration: none;">https://vimeo.com/1189590096</a>
+    </p>
+    <p style="text-align: center; color: var(--cream); font-size: 16px; font-weight: 500; margin-top: 6px;">
+      Submitted to Develop:Brighton Indie Showcase, May 2026.
+    </p>
+    <p style="text-align: center; color: var(--gold); font-size: 16px; letter-spacing: 1px;">
+      dhawkins.uk@gmail.com
+    </p>
+  </div>
+  <div class="studio-name">David Hawkins</div>
+</div>
+
+
+
+</body></html>
