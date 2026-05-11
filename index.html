@@ -1194,13 +1194,14 @@ function scaleDeck() {
   const designWidth = 1440;
   const designHeight = 900;
   const scale = window.innerWidth / designWidth;
+  const slideCount = document.querySelectorAll('.slide').length;
 
   document.body.style.transform = `scale(${scale})`;
   document.body.style.transformOrigin = 'top left';
   document.body.style.width = designWidth + 'px';
-  document.body.style.height = (designHeight *
-    document.querySelectorAll('.slide').length) + 'px';
+  document.body.style.height = (designHeight * slideCount) + 'px';
   document.documentElement.style.overflowX = 'hidden';
+  document.documentElement.style.height = (designHeight * slideCount * scale) + 'px';
 }
 
 scaleDeck();
