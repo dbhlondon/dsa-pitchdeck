@@ -1189,4 +1189,22 @@ p {
 
 
 
+<script>
+function scaleDeck() {
+  const designWidth = 1440;
+  const designHeight = 900;
+  const scaleX = window.innerWidth / designWidth;
+  const scaleY = window.innerHeight / designHeight;
+  const scale = Math.min(scaleX, scaleY);
+
+  document.body.style.transform = `scale(${scale})`;
+  document.body.style.transformOrigin = 'top left';
+  document.body.style.width = designWidth + 'px';
+  document.body.style.height = (designHeight *
+    document.querySelectorAll('.slide').length) + 'px';
+}
+
+scaleDeck();
+window.addEventListener('resize', scaleDeck);
+</script>
 </body></html>
