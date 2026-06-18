@@ -11,6 +11,34 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Special+Elite&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Permanent+Marker&family=Archivo:wght@400;500;700&family=Bubblegum+Sans&family=Homemade+Apple&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cinzel:wght@700&family=Abril+Fatface&family=Yeseva+One&family=UnifrakturCook:wght@700&family=Monoton&family=Rye&family=Playfair+Display:wght@800&family=Major+Mono+Display&family=Montserrat:wght@800&family=Righteous&family=Rammetto+One&display=swap" rel="stylesheet">
 <!--
+  DSA PITCH DECK v3.12.1 (2026-06-18) — S3 headroom (deck source only; not re-promoted to live):
+  the two S3 marker quotes wrapped to STACKED at 1280x800 (only 13px spare). The quote row is now
+  flex-wrap: nowrap (+ min-width:0 on each block) so they stay SIDE-BY-SIDE at that width,
+  reclaiming the ~85px the stack cost. No copy change. Re-audited S3 at 1920x1080 / 1280x800 /
+  2560x1440 — comfortable headroom restored. Builds on:
+  DSA PITCH DECK v3.12 (2026-06-18) — copy pass (deck source only; not re-promoted to live):
+  (1) S9 (ABOUT ME) echo fix — the bio "David Hawkins is a solo developer…" was immediately
+  followed by "One developer's vision, start to finish…"; changed the about-me opener to
+  "One man's vision, start to finish —" so it no longer echoes "solo developer". Nothing else
+  on S9 changed. (2) S3 (MEET THE BAND) now carries TWO marker quotes (was one): existing
+  trimmed "Loved the writing. Hilarious." → "Loved the writing." and a second added,
+  "The characters' names are hilarious." — both anonymous, both tagged PLAYTESTER, only one
+  uses "hilarious". Matches the S1 mono cite treatment. Height-audited S3 + S9 at 1920x1080 /
+  1280x800 / 2560x1440 — no clip. Builds on:
+  DSA PITCH DECK v3.11 (2026-06-18) — copy pass (deck source only; not yet re-promoted to
+  the live root build): (1) S9 (ABOUT ME) — the "human-led design and writing / no AI art at
+  ship" sentence replaced with the "One developer's vision, start to finish" rewrite
+  (placeholder art+music now; commissioned illustration + original music are part of the ask);
+  no mention of AI development. The David Hawkins bio line (names him) and the ship-velocity
+  line are kept, so ABOUT ME runs slightly longer. (2) S8 (IT WORKS) testimonials — existing
+  bare "It's addictive" attributed to Claire; the misquoted "Bedtime made me want to stop"
+  replaced AND re-attributed to "I bloody loved it. But then bedtime came." (Sophie); two new
+  marker quotes added: "Draws you in — that 'one more turn' feeling." (Ben) and "A nostalgic
+  celebration of a legendary era." (Dave C.). Four testimonials now wrap as quote+cite blocks.
+  (3) S3 (MEET THE BAND) — the unverifiable "They felt like real people" quote removed
+  entirely; "Loved the writing. Hilarious." attributed to a playtester (leaves a single marker
+  quote on S3 — balances left-aligned). All attributions use the S1 mono cite treatment
+  (Special Elite, uppercase, --ink-cap). Header bumped v3.10 → v3.11. Builds on:
   DSA PITCH DECK v3.10 (2026-06-18) - S5 gig slide: (1) card cluster REBUILT by CONTENT
   (gigcard3 = the BAND TAKES receipt -> RIGHT merged FULL HEIGHT/dominant; gigcard2 NMW
   review -> left top; gigcard1 before-the-gig -> left bottom; v3.8 had used the brief's
@@ -646,11 +674,19 @@ a { color: inherit; }
               <strong>31 artists you almost recognise</strong>, from the kid who plays till he bleeds to the
               legend whose hospitality standards exceed your budget. You build the lineup; they bring the egos.
               800+ cards, one deadpan narrator, and no version of any week that keeps all four of them happy.</p>
-            <div style="display:flex; gap: 14px; align-items:center; flex-wrap: wrap;">
-              <span class="marker" style="font-size: clamp(13px, 1.4vw, 18px);">“Loved the writing. Hilarious.”</span>
-              <span class="marker" style="font-size: clamp(13px, 1.4vw, 18px); color: var(--h-story); transform: rotate(1.5deg);">“They felt like real people.”</span>
-            </div>
             <div><span class="artnote">Portrait art: AI placeholder — commissioned illustration on funding.</span></div>
+          </div>
+        </div>
+        <!-- v3.12.1 — testimonial quotes moved out of the narrow one-sheet sub-column to the
+             full-width left column so both fit ONE line side-by-side (no wrap-to-stacked). -->
+        <div style="display:flex; gap: clamp(18px, 2vw, 30px); align-items:flex-start; flex-wrap: nowrap;">
+          <div style="display:flex; flex-direction:column; flex:0 0 auto;">
+            <span class="marker" style="font-size: clamp(13px, 1.4vw, 18px);">&ldquo;Loved the writing.&rdquo;</span>
+            <span style="font-family: var(--mono); font-size: clamp(8px, 0.75vw, 10px); letter-spacing: 1.5px; color: var(--ink-cap); margin-top: 2px;">&mdash; PLAYTESTER</span>
+          </div>
+          <div style="display:flex; flex-direction:column; flex:0 0 auto;">
+            <span class="marker" style="font-size: clamp(13px, 1.4vw, 18px); color: var(--h-story); transform: rotate(1.5deg);">&ldquo;The characters&rsquo; names are hilarious.&rdquo;</span>
+            <span style="font-family: var(--mono); font-size: clamp(8px, 0.75vw, 10px); letter-spacing: 1.5px; color: var(--ink-cap); margin-top: 2px;">&mdash; PLAYTESTER</span>
           </div>
         </div>
       </div>
@@ -1054,9 +1090,23 @@ a { color: inherit; }
           <span class="stamp st-c-rec" style="font-size: clamp(8.5px, 0.85vw, 11px);">Simulation-tested</span>
           <span class="stamp st-c-story" style="font-size: clamp(8.5px, 0.85vw, 11px); transform: rotate(1.5deg);">Live beta · regular OTA updates</span>
         </div>
-        <div style="display:flex; gap: 14px; margin-top: 12px; flex-wrap: wrap;">
-          <span class="marker" style="font-size: clamp(12px, 1.2vw, 15px);">“It's addictive.”</span>
-          <span class="marker" style="font-size: clamp(12px, 1.2vw, 15px); color: var(--h-story); transform: rotate(1deg);">“Bedtime made me want to stop.”</span>
+        <div style="display:flex; gap: 12px 18px; margin-top: 12px; flex-wrap: wrap; align-items: flex-start;">
+          <div style="display:flex; flex-direction:column;">
+            <span class="marker" style="font-size: clamp(12px, 1.2vw, 15px);">&ldquo;It&rsquo;s addictive.&rdquo;</span>
+            <span style="font-family: var(--mono); font-size: clamp(7.5px, 0.7vw, 9.5px); letter-spacing: 1.5px; color: var(--ink-cap); margin-top: 2px;">&mdash; CLAIRE, PLAYTESTER</span>
+          </div>
+          <div style="display:flex; flex-direction:column;">
+            <span class="marker" style="font-size: clamp(12px, 1.2vw, 15px); color: var(--h-story); transform: rotate(1deg);">&ldquo;I bloody loved it. But then bedtime came.&rdquo;</span>
+            <span style="font-family: var(--mono); font-size: clamp(7.5px, 0.7vw, 9.5px); letter-spacing: 1.5px; color: var(--ink-cap); margin-top: 2px;">&mdash; SOPHIE, PLAYTESTER</span>
+          </div>
+          <div style="display:flex; flex-direction:column;">
+            <span class="marker" style="font-size: clamp(12px, 1.2vw, 15px); transform: rotate(-1deg);">&ldquo;Draws you in &mdash; that &lsquo;one more turn&rsquo; feeling.&rdquo;</span>
+            <span style="font-family: var(--mono); font-size: clamp(7.5px, 0.7vw, 9.5px); letter-spacing: 1.5px; color: var(--ink-cap); margin-top: 2px;">&mdash; BEN, PLAYTESTER</span>
+          </div>
+          <div style="display:flex; flex-direction:column;">
+            <span class="marker" style="font-size: clamp(12px, 1.2vw, 15px); color: var(--h-story);">&ldquo;A nostalgic celebration of a legendary era.&rdquo;</span>
+            <span style="font-family: var(--mono); font-size: clamp(7.5px, 0.7vw, 9.5px); letter-spacing: 1.5px; color: var(--ink-cap); margin-top: 2px;">&mdash; DAVE C., PLAYTESTER</span>
+          </div>
         </div>
       </div>
 
@@ -1109,8 +1159,9 @@ a { color: inherit; }
           <div class="ransom r-story" style="margin-bottom: 8px;">ABOUT ME</div>
           <p class="lede" style="font-size: clamp(11px, 1.1vw, 14px); color: var(--ink-body); line-height: 1.6;">
             David Hawkins is a solo developer with a systems-engineering background, old enough to have lived
-            the era the game is set in. Design, writing and code are all his — and all human-led, with
-            commissioned art replacing the current placeholders so there's <b>no AI-generated art at ship</b>.
+            the era the game is set in. One man&rsquo;s vision, start to finish &mdash; every card, system and
+            decision shaped and signed off by one person, for a single consistent voice. Placeholder art and
+            music now; commissioned illustration and original music are part of the ask.
             The way he works is half the pitch: a bug reported in the morning is often fixed and live to
             testers by the afternoon.</p>
           <div style="display:flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
