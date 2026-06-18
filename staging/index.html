@@ -9,8 +9,51 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Special+Elite&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Permanent+Marker&family=Archivo:wght@400;500;700&family=Bubblegum+Sans&family=Homemade+Apple&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cinzel:wght@700&family=Abril+Fatface&family=Yeseva+One&family=UnifrakturCook:wght@700&family=Monoton&family=Rye&family=Playfair+Display:wght@800&family=Major+Mono+Display&family=Montserrat:wght@800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cinzel:wght@700&family=Abril+Fatface&family=Yeseva+One&family=UnifrakturCook:wght@700&family=Monoton&family=Rye&family=Playfair+Display:wght@800&family=Major+Mono+Display&family=Montserrat:wght@800&family=Righteous&family=Rammetto+One&display=swap" rel="stylesheet">
 <!--
+  DSA PITCH DECK v3.10 (2026-06-18) - S5 gig slide: (1) card cluster REBUILT by CONTENT
+  (gigcard3 = the BAND TAKES receipt -> RIGHT merged FULL HEIGHT/dominant; gigcard2 NMW
+  review -> left top; gigcard1 before-the-gig -> left bottom; v3.8 had used the brief's
+  scrambled filename->role map, so the real receipt had landed small in a left cell);
+  --gch up to 330. (2) thirds rebalanced left 28% / middle 36% / right 36% (left panel
+  flex 1->0.78). (3) caption BLEED fixed: name+info+cap wrapped in fixed-height .splash-meta
+  so every item is equal height (was ragged -> neighbour captions ghosted below the active).
+  (4) splash name/info/cap recoloured dark ink (var(--ink)/(--ink-cap)/(--ink-body)) - were
+  light/illegible on parchment. (5) S1 cover Premium stamp gold -> red (st-c-crisis), the
+  ports line stays gold. Builds on:
+  DSA PITCH DECK v3.9 (2026-06-18) - S4 gains 2 hero cards + reorder: row is now
+  Stu Wunderbar / Angie-Cellar Bar (hero2) / Izzy Raw (hero1) / Derek Boyle deal
+  (moved from pos 2); two "TO CAPTURE" dashed placeholders removed; row bottom-aligned
+  (3 bust cards + Stu near-equal ratio ~0.8). S2 two choice placeholders -> real
+  non-hero captures (nonhero1 GeoCities, nonhero2 band-name-meaning; landscape, so the
+  portrait .shot boxes became floating cutouts). Pen-pass: S7 heading -> "It works -
+  untapped potential"; S3 context line pluralised. Builds on:
+  DSA PITCH DECK v3.8 (2026-06-18) — S5 gig slide FINAL content (all 3 thirds).
+  MIDDLE: arrival-splash carousel 6 placeholders -> 8 REAL captures (venue-splash-1..8),
+  size-ordered by capacity (Last Regret 40 -> Euphoria 12,000); each .splash-name in its
+  assigned per-venue font (venueNameFont: Rammetto One / Righteous / Archivo Black —
+  Righteous + Rammetto One added to the font load); .splash-info real tier/cap/type; NEW
+  serif-italic .splash-cap one-liner per venue (trimmed from VENUE_ARRIVAL_REVIEWS, manager
+  names omitted as rolled). .splash-pic ratio -> real 1080/2316; item width-governed; dwell
+  3.5s -> 5s. RIGHT: 2x2 placeholders -> 3-card cluster (gigcard1 over gigcard3 left, gigcard2
+  merged right) at REAL ratios via .shot aspect-ratio + shared --gch. Builds on:
+
+  DSA PITCH DECK v3.7 (2026-06-17) — S3 casting carousel: (1) item layout — name
+  LEFT + archetype banner RIGHT share one row (.cara-row), flavour line beneath
+  (was banner stacked over name); (2) de-grouped order — the 31 artists reordered
+  so no two adjacent share an archetype (cycle T·LC·QO·HH·LA, the 7th Legacy slid
+  into a QO|HH gap; seam tina_screamer(LA)→dan_allbran(T) cross-type). SINGLE fixed
+  order baked into the markup, duplicated by JS for the seamless -50% loop (both
+  halves identical). Each artist keeps its banner+colour. Builds on:
+
+  DSA PITCH DECK v3.6 (2026-06-17) — S3 casting carousel: per-artist archetype
+  banner (stamp-scale, coloured by archetype via the shared st-c-* classes) above
+  each name; column 2 became a flex stack (banner · name · line). Colour map:
+  Talent→gold, Loose Cannon→crisis(red), Quiet One→story(blue), Hired Hand→
+  stunt(purple), Legacy Act→rec(teal). One context line added under the casting-
+  sheet header. Assignments verified against data/artists.ts (gold 6 / crisis 6 /
+  story 6 / stunt 6 / rec 7 = 31; no mismatch). Builds on:
+
   DSA PITCH DECK v3.5 (2026-06-17) — S6 tier-4 legend pair gets its own two-page-spread
   lightbox: clicking EITHER page opens a fullscreen overlay showing BOTH pages side by
   side (vertical-stack + scroll on narrow), sized to viewport height, thin gold frame;
@@ -326,29 +369,56 @@ a { color: inherit; }
 /* v3.3 — bigger artist thumbs: first column ~1/3 of the carousel width. */
 .vcarousel .cara-item { width: 100% !important; margin: 0 0 16px !important;
   display: grid; grid-template-columns: clamp(110px, 33%, 200px) 1fr; column-gap: 14px; align-items: center; }
-.vcarousel .cara-pol { grid-row: 1 / span 2; width: 100%; transform: rotate(-1.2deg); }
+.vcarousel .cara-pol { width: 100%; transform: rotate(-1.2deg); }
 .vcarousel .cara-item:nth-child(2n) .cara-pol { transform: rotate(1.4deg); }
-.vcarousel .cara-name { grid-column: 2; align-self: end; margin-top: 0; font-size: clamp(15px, 1.6vw, 22px); }
-.vcarousel .cara-line { grid-column: 2; align-self: start; margin-top: 3px; font-size: clamp(10.5px, 1.05vw, 13.5px); }
+/* v3.6/v3.7 — column 2 is a flex stack: [name · archetype banner] row, then the
+   flavour line beneath; vertically centred next to the photo. */
+.vcarousel .cara-txt { grid-column: 2; min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+/* v3.7 — name LEFT, archetype banner RIGHT, sharing one row. */
+.vcarousel .cara-row { display: flex; flex-direction: row; align-items: center; justify-content: space-between; gap: 8px; }
+.vcarousel .cara-name { margin-top: 0; min-width: 0; font-size: clamp(15px, 1.6vw, 22px); }
+.vcarousel .cara-line { margin-top: 3px; font-size: clamp(10.5px, 1.05vw, 13.5px); }
+/* v3.6 — per-artist archetype banner: stamp-scale, coloured by archetype via the
+   shared st-c-* backgrounds. NAME ONLY — no mechanical effect (effects in flux).
+   v3.7 — sits at the right of the name row (drop the stacked margin/align-self);
+   never shrinks so the label stays whole. */
+.vcarousel .cara-arch { flex: 0 0 auto; display: inline-block; font-family: var(--mono);
+  font-weight: 900; text-transform: uppercase; letter-spacing: 1px; font-size: clamp(7.5px, 0.8vw, 10px);
+  line-height: 1; padding: 3px 7px; color: var(--cream); border-radius: 0; white-space: nowrap;
+  box-shadow: 1.5px 1.5px 0 rgba(0,0,0,0.28); transform: rotate(-1deg); }
 
 /* Gig-splash carousel (S6) — single item centred/large, neighbours peek, timed
    auto-advance, pause on hover. JS centres the active item; arbitrary item count. */
 .splash-wrap { position: relative; overflow: hidden; width: 100%; }
 .splash-track { display: flex; align-items: flex-start; transition: transform 0.55s ease; will-change: transform; }
-.splash-item { flex: 0 0 auto; width: auto; margin: 0 clamp(7px, 0.9vw, 13px);
+/* v3.8 — item width fixed (governs the pic + the text block beneath); the caption
+   wraps within this width. The pic is WIDTH-governed off the item; height derives
+   from the real capture ratio (1080×2316). vh-clamped so the slide still fits. */
+.splash-item { flex: 0 0 auto; width: clamp(138px, 21.5vh, 272px); margin: 0 clamp(7px, 0.9vw, 13px);
   opacity: 0.4; transform: scale(0.92); transition: opacity .5s ease, transform .5s ease; }
 .splash-item.active { opacity: 1; transform: scale(1); }
-/* v3.2.1 — PORTRAIT full-phone-screen splash, governed by HEIGHT so the slide fits
-   one viewport (height clamp by vh; width derives from the 9/19.5 aspect → ~290px
-   wide at 1080). MATCH the real gallery export ratio exactly once the PNGs land. */
-.splash-pic { position: relative; aspect-ratio: 9 / 19.5; height: clamp(360px, 58vh, 660px); width: auto;
+/* v3.8 — PORTRAIT phone splash at the REAL capture ratio (1080/2316 = 0.4663; was
+   the placeholder 9/19.5). Width:100% of the item; height follows the ratio. */
+.splash-pic { position: relative; aspect-ratio: 1080 / 2316; width: 100%;
   background: #0c0c10; border-radius: 14px; border: 2px solid rgba(255,255,255,0.15);
   box-shadow: 0 12px 32px rgba(0,0,0,0.5); overflow: hidden; }
 .splash-pic > img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 2; display: block; }
-.splash-name { font-family: var(--poster); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1;
-  font-size: clamp(14px, 1.7vw, 26px); color: var(--fz-light-body); margin-top: 7px; text-align: center; }
-.splash-info { font-family: var(--mono); font-size: clamp(8px, 0.82vw, 11px); letter-spacing: 1px;
-  color: var(--fz-light-mut); margin-top: 3px; text-align: center; }
+/* v3.10 — name/info/cap wrapped in .splash-meta: a FIXED-height block so every item is the
+   SAME height (kills the bleed — ragged item heights made neighbour captions ghost below the
+   active one). Reserves space for the longest name(2 lines)+info+cap(3 lines); overflow hidden
+   as a safety clip. Colours are DARK INK (v3.10) — the splash sits on pale parchment, so the
+   old light colours were illegible; matches the ONE WEEK IN THE LIFE panel. */
+/* Reserve sized in vh (the item is vh-governed) so the meta scales WITH the item — a
+   narrow item gets smaller text, not more lines, so the longest caption never clips. */
+.splash-meta { height: clamp(90px, 16.5vh, 140px); overflow: hidden; }
+.splash-name { font-family: var(--poster); text-transform: uppercase; letter-spacing: 0.5px; line-height: 1.0;
+  font-size: clamp(12px, 2.5vh, 24px); color: var(--ink); margin-top: 7px; text-align: center; }
+.splash-info { font-family: var(--mono); font-size: clamp(7.5px, 1.05vh, 11px); letter-spacing: 1px;
+  color: var(--ink-cap); margin-top: 3px; text-align: center; }
+/* v3.8 — per-venue character one-liner (trimmed from VENUE_ARRIVAL_REVIEWS). Serif
+   italic so flavour reads as a different register from the mono facts line above. */
+.splash-cap { font-family: var(--serif); font-style: italic; font-size: clamp(8.5px, 1.3vh, 11px);
+  line-height: 1.28; color: var(--ink-body); margin-top: 4px; text-align: center; }
 
 /* ── v3.2 ADDENDUM — 1440p / QHD+ tier (gated ABOVE 1920 so 1920×1080 and
    1280×800 render byte-identical; only ≥2000px viewports get the wider fill +
@@ -400,7 +470,7 @@ a { color: inherit; }
 
     <div style="display:flex; gap: 10px; justify-content:center; flex-wrap: wrap; margin-bottom: 1.6vh;">
       <span class="stamp st-c-story" style="transform: rotate(-2deg);">Mobile</span>
-      <span class="stamp st-c-gold" style="transform: rotate(1.5deg);">Premium</span>
+      <span class="stamp st-c-crisis" style="transform: rotate(1.5deg);">Premium</span>
       <span class="stamp st-c-rec" style="transform: rotate(-1deg);">Card Game</span>
       <span class="stamp st-c-gig" style="transform: rotate(2.5deg);">Early Noughties</span>
     </div>
@@ -464,15 +534,19 @@ a { color: inherit; }
 
       <!-- The card, rendered as the game renders it -->
       <div style="flex: 1.15;">
-        <!-- v3.2 — two NON-HERO choice-card cutouts (bare cards on white, S4/S5 convention). -->
-        <div style="display:flex; gap: clamp(10px, 1.4vw, 16px); justify-content:center; max-width: 460px; margin: 0 auto;">
-          <div class="shot" style="flex:1; aspect-ratio: 0.74; transform: rotate(-1deg);">
-            <div class="ph-label"><b>CUTOUT</b>CHOICE CARD 1<br>bare fanzine card on white<br><i>screenshots/deck/s2-choice-1.png</i></div>
-            <img src="screenshots/deck/s2-choice-1.png" alt="Choice card — a band decision on the fanzine surface" onerror="this.style.display='none'">
+        <!-- v3.9 - two NON-HERO choice-card cutouts (real captures; floating cutouts, S4 convention). -->
+        <div style="display:flex; gap: clamp(10px, 1.4vw, 18px); justify-content:center; align-items:center; max-width: 500px; margin: 0 auto;">
+          <div style="flex:1 1 0; min-width:0; display:flex; justify-content:center;">
+            <div style="position:relative; background:transparent; padding:0; box-shadow:0 9px 26px rgba(0,0,0,0.3); transform: rotate(-1deg); width:100%;">
+              <!-- nonhero1.png - GeoCities/MIDI "commission the site" choice card -->
+              <img src="screenshots/deck/nonhero1.png" alt="Choice card &mdash; someone's nephew can build a website, the current site is a GeoCities page; keep GeoCities / commission the site" style="display:block; width:100%;" onerror="this.style.display='none'">
+            </div>
           </div>
-          <div class="shot" style="flex:1; aspect-ratio: 0.74; transform: rotate(1deg);">
-            <div class="ph-label"><b>CUTOUT</b>CHOICE CARD 2<br>bare fanzine card on white<br><i>screenshots/deck/s2-choice-2.png</i></div>
-            <img src="screenshots/deck/s2-choice-2.png" alt="Choice card — a band decision on the fanzine surface" onerror="this.style.display='none'">
+          <div style="flex:1 1 0; min-width:0; display:flex; justify-content:center;">
+            <div style="position:relative; background:transparent; padding:0; box-shadow:0 9px 26px rgba(0,0,0,0.3); transform: rotate(1deg); width:100%;">
+              <!-- nonhero2.png - band-name-meaning "make something up" choice card -->
+              <img src="screenshots/deck/nonhero2.png" alt="Choice card &mdash; a journalist asks what the band name means; it doesn't mean anything / make something up" style="display:block; width:100%;" onerror="this.style.display='none'">
+            </div>
           </div>
         </div>
         <p style="text-align:center; font-family: var(--mono); font-size: clamp(9px, 0.85vw, 11px); color: var(--fz-light-mut); margin-top: 10px; letter-spacing: 1px;">ACTUAL CARDS. EVERY DECISION LOOKS LIKE THIS.</p>
@@ -583,40 +657,42 @@ a { color: inherit; }
 
       <!-- RIGHT: the 31 — vertical auto-scrolling casting sheet (translateY loop, masked, pause on hover) -->
       <div style="flex: 0.82; min-width: 0; display:flex; flex-direction: column;">
-        <p style="font-family: var(--mono); font-weight: 700; letter-spacing: 2px; font-size: clamp(9px, 0.9vw, 12px); color: var(--ink-cap); margin-bottom: 1vh;">▸ THE CASTING SHEET — EVERY BAND IS FOUR OF THESE</p>
+        <p style="font-family: var(--mono); font-weight: 700; letter-spacing: 2px; font-size: clamp(9px, 0.9vw, 12px); color: var(--ink-cap); margin-bottom: 0.5vh;">▸ THE CASTING SHEET — EVERY BAND IS FOUR OF THESE</p>
+        <!-- v3.6 — names the archetype system so the coloured banners have context. -->
+        <p style="font-family: var(--serif); font-style: italic; font-size: clamp(10px, 1vw, 13px); color: var(--ink-body); margin-bottom: 1vh;">Each of the five archetypes has different strengths, flaws and pulls on the band.</p>
         <div class="vcarousel">
           <div class="carousel-track">
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/dan_allbran.webp" alt="Dan Allbran"></div><div class="cara-name">Dan Allbran</div><div class="cara-line">Hears things nobody else can — always three ideas ahead.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/djorg.webp" alt="Djorg"></div><div class="cara-name">Djorg</div><div class="cara-line">Completely original. Collaborates on her own terms only.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/pj_harte.webp" alt="PJ Harte"></div><div class="cara-name">PJ Harte</div><div class="cara-line">Doesn't perform, just is. Writes what she needs, not what you do.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/the_artist.webp" alt="The Artist"></div><div class="cara-name">The Artist</div><div class="cara-line">Plays everything, owns everything. Non-negotiable.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/jarvis_crockery.webp" alt="Jarvis Crockett"></div><div class="cara-name">Jarvis Crockett</div><div class="cara-line">Makes the ordinary sound vast. Aware of his own myth.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/maradonna.webp" alt="Donna Mara"></div><div class="cara-name">Donna Mara</div><div class="cara-line">The real thing — and she'll run your rehearsals too.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/lee_galway.webp" alt="Lee Galway"></div><div class="cara-name">Lee Galway</div><div class="cara-line">Born frontman. Thinks “difficult” means “standards”.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/jerri_allswell.webp" alt="Jerri Allswell"></div><div class="cara-name">Jerri Allswell</div><div class="cara-line">Huge on stage. Already planning the solo career.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/izzy_raw.webp" alt="Izzy Raw"></div><div class="cara-name">Izzy Raw</div><div class="cara-line">Plays till he bleeds. The body has opinions.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/amy_wino_house.webp" alt="Amy Winer"></div><div class="cara-name">Amy Winer</div><div class="cara-line">Voice like a bruise. The pub is always closer.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/shirley_mansoon.webp" alt="Shirley Mansfield"></div><div class="cara-name">Shirley Mansfield</div><div class="cara-line">Electric — and gone the same way she arrives, without warning.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/courtney_scove.webp" alt="Courtney Scove"></div><div class="cara-name">Courtney Scove</div><div class="cara-line">Ferocious. Speaks in volume and silence, nothing between.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/tom_yorkie.webp" alt="Tom Yorkie"></div><div class="cara-name">Tom Yorkie</div><div class="cara-line">Music from another decade. Showing up is complicated.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/kay_bash.webp" alt="Kay Bash"></div><div class="cara-name">Kay Bash</div><div class="cara-line">Songs from somewhere unreachable. Years between them.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/skinn.webp" alt="Skinn"></div><div class="cara-name">Skinn</div><div class="cara-line">Steps over the line, then tells you exactly what she thinks.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/scruffy_lad.webp" alt="Scruffy Lad"></div><div class="cara-name">Scruffy Lad</div><div class="cara-line">Found the songs more than wrote them. The chaos is load-bearing.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/alana_morris.webp" alt="Alana Morris"></div><div class="cara-name">Alana Morris</div><div class="cara-line">Songs that don't apologise. Everything is personal.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/trixie.webp" alt="Trixie"></div><div class="cara-name">Trixie</div><div class="cara-line">Reaches places the others can't. His thoughts are his own business.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/len_krav.webp" alt="Len Krav"></div><div class="cara-name">Len Krav</div><div class="cara-line">Plays anything, shows up for everything. His side project's probably better.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/gwennie_stef.webp" alt="Gwennie Stef"></div><div class="cara-name">Gwennie Stef</div><div class="cara-line">The voice, the look, the work rate — and opinions she won't hold.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/fats.webp" alt="Big Man Little"></div><div class="cara-name">Big Man Little</div><div class="cara-line">Does it without fuss. His good nights, your early starts.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/kylie_minow.webp" alt="Kylie Minow"></div><div class="cara-name">Kylie Minow</div><div class="cara-line">Never missed a beat. Sets a bar the others can't reach.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/cheri_cowes.webp" alt="Cheri Cowes"></div><div class="cara-name">Cheri Cowes</div><div class="cara-line">No agenda but the work. So quiet you forget to check in.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/gracie_may.webp" alt="Gracie May"></div><div class="cara-name">Gracie May</div><div class="cara-line">A voice you'd know in a hurricane. Runs on her own clock.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/macca.webp" alt="Macca"></div><div class="cara-name">Macca</div><div class="cara-line">Forty years, never slipped. Standards formed at the very top.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/rick_swagger.webp" alt="Rick Swagger"></div><div class="cara-name">Rick Swagger</div><div class="cara-line">Forty years of stagecraft — and forty years of opinions.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/john_tomes.webp" alt="John Tomes"></div><div class="cara-name">John Tomes</div><div class="cara-line">Fills any room. His hospitality standards exceed your budget.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/boss_swinesteen.webp" alt="Boss Swinesteen"></div><div class="cara-name">Boss Swinesteen</div><div class="cara-line">Nothing held back, ever. The vision isn't fashion.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/stu_wunderbar.webp" alt="Stu Wunderbar"></div><div class="cara-name">Stu Wunderbar</div><div class="cara-line">Plays from somewhere most never find. The business is your problem.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/tina_screamer.webp" alt="Tina Screamer"></div><div class="cara-name">Tina Screamer</div><div class="cara-line">Survived the industry twice. Patience for incompetence: none.</div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/bill_collies.webp" alt="Bill Collies"></div><div class="cara-name">Bill Collies</div><div class="cara-line">Technically immaculate. The sincerity is total, and unsettling.</div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/dan_allbran.webp" alt="Dan Allbran"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Dan Allbran</div><div class="cara-arch st-c-gold">THE TALENT</div></div><div class="cara-line">Hears things nobody else can — always three ideas ahead.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/lee_galway.webp" alt="Lee Galway"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Lee Galway</div><div class="cara-arch st-c-crisis">THE LOOSE CANNON</div></div><div class="cara-line">Born frontman. Thinks “difficult” means “standards”.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/tom_yorkie.webp" alt="Tom Yorkie"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Tom Yorkie</div><div class="cara-arch st-c-story">THE QUIET ONE</div></div><div class="cara-line">Music from another decade. Showing up is complicated.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/bill_collies.webp" alt="Bill Collies"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Bill Collies</div><div class="cara-arch st-c-rec">THE LEGACY ACT</div></div><div class="cara-line">Technically immaculate. The sincerity is total, and unsettling.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/len_krav.webp" alt="Len Krav"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Len Krav</div><div class="cara-arch st-c-stunt">THE HIRED HAND</div></div><div class="cara-line">Plays anything, shows up for everything. His side project's probably better.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/macca.webp" alt="Macca"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Macca</div><div class="cara-arch st-c-rec">THE LEGACY ACT</div></div><div class="cara-line">Forty years, never slipped. Standards formed at the very top.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/djorg.webp" alt="Djorg"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Djorg</div><div class="cara-arch st-c-gold">THE TALENT</div></div><div class="cara-line">Completely original. Collaborates on her own terms only.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/jerri_allswell.webp" alt="Jerri Allswell"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Jerri Allswell</div><div class="cara-arch st-c-crisis">THE LOOSE CANNON</div></div><div class="cara-line">Huge on stage. Already planning the solo career.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/kay_bash.webp" alt="Kay Bash"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Kay Bash</div><div class="cara-arch st-c-story">THE QUIET ONE</div></div><div class="cara-line">Songs from somewhere unreachable. Years between them.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/gwennie_stef.webp" alt="Gwennie Stef"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Gwennie Stef</div><div class="cara-arch st-c-stunt">THE HIRED HAND</div></div><div class="cara-line">The voice, the look, the work rate — and opinions she won't hold.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/rick_swagger.webp" alt="Rick Swagger"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Rick Swagger</div><div class="cara-arch st-c-rec">THE LEGACY ACT</div></div><div class="cara-line">Forty years of stagecraft — and forty years of opinions.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/pj_harte.webp" alt="PJ Harte"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">PJ Harte</div><div class="cara-arch st-c-gold">THE TALENT</div></div><div class="cara-line">Doesn't perform, just is. Writes what she needs, not what you do.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/izzy_raw.webp" alt="Izzy Raw"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Izzy Raw</div><div class="cara-arch st-c-crisis">THE LOOSE CANNON</div></div><div class="cara-line">Plays till he bleeds. The body has opinions.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/skinn.webp" alt="Skinn"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Skinn</div><div class="cara-arch st-c-story">THE QUIET ONE</div></div><div class="cara-line">Steps over the line, then tells you exactly what she thinks.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/fats.webp" alt="Big Man Little"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Big Man Little</div><div class="cara-arch st-c-stunt">THE HIRED HAND</div></div><div class="cara-line">Does it without fuss. His good nights, your early starts.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/john_tomes.webp" alt="John Tomes"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">John Tomes</div><div class="cara-arch st-c-rec">THE LEGACY ACT</div></div><div class="cara-line">Fills any room. His hospitality standards exceed your budget.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/the_artist.webp" alt="The Artist"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">The Artist</div><div class="cara-arch st-c-gold">THE TALENT</div></div><div class="cara-line">Plays everything, owns everything. Non-negotiable.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/amy_wino_house.webp" alt="Amy Winer"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Amy Winer</div><div class="cara-arch st-c-crisis">THE LOOSE CANNON</div></div><div class="cara-line">Voice like a bruise. The pub is always closer.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/scruffy_lad.webp" alt="Scruffy Lad"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Scruffy Lad</div><div class="cara-arch st-c-story">THE QUIET ONE</div></div><div class="cara-line">Found the songs more than wrote them. The chaos is load-bearing.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/kylie_minow.webp" alt="Kylie Minow"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Kylie Minow</div><div class="cara-arch st-c-stunt">THE HIRED HAND</div></div><div class="cara-line">Never missed a beat. Sets a bar the others can't reach.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/boss_swinesteen.webp" alt="Boss Swinesteen"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Boss Swinesteen</div><div class="cara-arch st-c-rec">THE LEGACY ACT</div></div><div class="cara-line">Nothing held back, ever. The vision isn't fashion.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/jarvis_crockery.webp" alt="Jarvis Crockett"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Jarvis Crockett</div><div class="cara-arch st-c-gold">THE TALENT</div></div><div class="cara-line">Makes the ordinary sound vast. Aware of his own myth.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/shirley_mansoon.webp" alt="Shirley Mansfield"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Shirley Mansfield</div><div class="cara-arch st-c-crisis">THE LOOSE CANNON</div></div><div class="cara-line">Electric — and gone the same way she arrives, without warning.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/alana_morris.webp" alt="Alana Morris"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Alana Morris</div><div class="cara-arch st-c-story">THE QUIET ONE</div></div><div class="cara-line">Songs that don't apologise. Everything is personal.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/cheri_cowes.webp" alt="Cheri Cowes"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Cheri Cowes</div><div class="cara-arch st-c-stunt">THE HIRED HAND</div></div><div class="cara-line">No agenda but the work. So quiet you forget to check in.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/stu_wunderbar.webp" alt="Stu Wunderbar"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Stu Wunderbar</div><div class="cara-arch st-c-rec">THE LEGACY ACT</div></div><div class="cara-line">Plays from somewhere most never find. The business is your problem.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/maradonna.webp" alt="Donna Mara"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Donna Mara</div><div class="cara-arch st-c-gold">THE TALENT</div></div><div class="cara-line">The real thing — and she'll run your rehearsals too.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/courtney_scove.webp" alt="Courtney Scove"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Courtney Scove</div><div class="cara-arch st-c-crisis">THE LOOSE CANNON</div></div><div class="cara-line">Ferocious. Speaks in volume and silence, nothing between.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/trixie.webp" alt="Trixie"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Trixie</div><div class="cara-arch st-c-story">THE QUIET ONE</div></div><div class="cara-line">Reaches places the others can't. His thoughts are his own business.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/gracie_may.webp" alt="Gracie May"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Gracie May</div><div class="cara-arch st-c-stunt">THE HIRED HAND</div></div><div class="cara-line">A voice you'd know in a hurricane. Runs on her own clock.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/tina_screamer.webp" alt="Tina Screamer"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Tina Screamer</div><div class="cara-arch st-c-rec">THE LEGACY ACT</div></div><div class="cara-line">Survived the industry twice. Patience for incompetence: none.</div></div></div>
           </div><!-- /carousel-track -->
         </div><!-- /vcarousel -->
       </div><!-- /right column -->
@@ -649,47 +725,36 @@ a { color: inherit; }
          band-drama · label/opportunity · money · awards [capture gap]. Crisis lives on the
          crisis beat; the label LETTER moved to the "Make the record" beat as the contract.
          Cards fill ~quarter-width each and run nearly full slide height (they reward size). -->
-    <div class="s4row" style="display:flex; gap: clamp(8px, 1vw, 16px); align-items:flex-start; justify-content:center;">
+      <div class="s4row" style="display:flex; gap: clamp(8px, 1vw, 16px); align-items:flex-end; justify-content:center;">
 
-      <!-- BAND DRAMA — real cutout -->
-      <div style="flex:1 1 0; display:flex; justify-content:center;">
-        <div style="position: relative; background: transparent; padding: 0; box-shadow: 0 9px 26px rgba(0,0,0,0.3); transform: rotate(-0.6deg); width:100%; max-width: 330px;">
-          <div class="tape tl"></div>
-          <!-- artefact-band-card.png — Stu band-dynamics card: a new song, seven minutes, one chord. -->
-          <img src="screenshots/deck/artefact-band-card.png" alt="Band-dynamics decision card — Stu has written a new song; absolutely not / give it a go" style="width:100%; display:block;" onerror="this.style.display='none'">
+        <!-- 1 - BAND DRAMA - Stu Wunderbar (the seven-minute one-chord song) -->
+        <div style="flex:1 1 0; display:flex; justify-content:center;">
+          <div style="position: relative; background: transparent; padding: 0; box-shadow: 0 9px 26px rgba(0,0,0,0.3); transform: rotate(-0.6deg); width:100%; max-width: 330px;">
+            <img src="screenshots/deck/artefact-band-card.png" alt="Band-dynamics decision card &mdash; Stu Wunderbar; absolutely not / give it a go" style="width:100%; display:block;" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <!-- 2 - VENUE OPPORTUNITY - Angie / The Cellar Bar (hero2.png) -->
+        <div style="flex:1 1 0; display:flex; justify-content:center;">
+          <div style="position: relative; background: transparent; padding: 0; box-shadow: 0 9px 26px rgba(0,0,0,0.3); transform: rotate(0.5deg); width:100%; max-width: 330px;">
+            <img src="screenshots/deck/hero2.png" alt="Venue opportunity decision card &mdash; Angie at The Cellar Bar; fill the gap / not enough time" style="width:100%; display:block;" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <!-- 3 - BAND DRAMA - Izzy Raw fake-feud (hero1.png) -->
+        <div style="flex:1 1 0; display:flex; justify-content:center;">
+          <div style="position: relative; background: transparent; padding: 0; box-shadow: 0 9px 26px rgba(0,0,0,0.3); transform: rotate(-0.5deg); width:100%; max-width: 330px;">
+            <img src="screenshots/deck/hero1.png" alt="Band drama decision card &mdash; Izzy Raw fake feud; apologise publicly / escalate it" style="width:100%; display:block;" onerror="this.style.display='none'">
+          </div>
+        </div>
+
+        <!-- 4 - LABEL OPPORTUNITY - Derek Boyle, the deal (moved from position 2) -->
+        <div style="flex:1 1 0; display:flex; justify-content:center;">
+          <div style="position: relative; background: transparent; padding: 0; box-shadow: 0 9px 26px rgba(0,0,0,0.3); transform: rotate(0.6deg); width:100%; max-width: 330px;">
+            <img src="screenshots/deck/artefact-deal-card.png" alt="Label opportunity decision card &mdash; Derek Boyle, Compact Recordings; sign the deal" style="width:100%; display:block;" onerror="this.style.display='none'">
+          </div>
         </div>
       </div>
-
-      <!-- LABEL / OPPORTUNITY — real deal-card cutout (the letter moved to s4b) -->
-      <div style="flex:1 1 0; display:flex; justify-content:center;">
-        <div style="position: relative; background: transparent; padding: 0; box-shadow: 0 9px 26px rgba(0,0,0,0.3); transform: rotate(0.6deg); width:100%; max-width: 330px;">
-          <div class="tape tr"></div>
-          <!-- artefact-deal-card.png — Derek Boyle / Compact Recordings deal offer: £900 advance, 40% royalty, SIGN THE DEAL. -->
-          <img src="screenshots/deck/artefact-deal-card.png" alt="Label opportunity decision card — Derek Boyle, Compact Recordings, sign the deal" style="width:100%; display:block;" onerror="this.style.display='none'">
-        </div>
-      </div>
-
-      <!-- v3.2 — gear card REMOVED. Two open slots for Dave's final picks (one likely Awards):
-           dashed "TO CAPTURE" placeholders, each backed by a real <img> that shows once the
-           asset lands (onerror hides → dashed brief remains until then). -->
-      <div style="flex:1 1 0; display:flex; justify-content:center;">
-        <div style="position: relative; width: 100%; max-width: 330px; aspect-ratio: 0.78; border: 2px dashed var(--paper-border); background: rgba(200,168,78,0.07); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 16px; transform: rotate(-0.5deg);">
-          <span class="stamp st-c-gold" style="position:absolute; top:10px; right:10px; font-size: clamp(8px, 0.78vw, 10.5px);">TO CAPTURE</span>
-          <div style="font-family: var(--mono); font-weight:900; letter-spacing:2px; font-size: clamp(12px, 1.3vw, 17px); color: var(--ink-cap);">CARD 3 — DAVE'S PICK</div>
-          <div style="font-family: var(--mono); font-size: clamp(9px, 0.9vw, 12px); color: var(--ink-cap); margin-top:10px; line-height:1.6;">decision-card cutout<br><i>s4-card-3.png</i></div>
-          <img src="screenshots/deck/s4-card-3.png" alt="Decision card — final pick (to be captured)" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:transparent; z-index:2;" onerror="this.style.display='none'">
-        </div>
-      </div>
-
-      <div style="flex:1 1 0; display:flex; justify-content:center;">
-        <div style="position: relative; width: 100%; max-width: 330px; aspect-ratio: 0.78; border: 2px dashed var(--paper-border); background: rgba(200,168,78,0.07); display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding: 16px; transform: rotate(0.6deg);">
-          <span class="stamp st-c-gold" style="position:absolute; top:10px; right:10px; font-size: clamp(8px, 0.78vw, 10.5px);">TO CAPTURE</span>
-          <div style="font-family: var(--mono); font-weight:900; letter-spacing:2px; font-size: clamp(12px, 1.3vw, 17px); color: var(--ink-cap);">CARD 4 — LIKELY AWARDS</div>
-          <div style="font-family: var(--mono); font-size: clamp(9px, 0.9vw, 12px); color: var(--ink-cap); margin-top:10px; line-height:1.6;">decision-card cutout<br><i>s4-card-4.png</i></div>
-          <img src="screenshots/deck/s4-card-4.png" alt="Decision card — likely Awards night (to be captured)" style="position:absolute; inset:0; width:100%; height:100%; object-fit:contain; background:transparent; z-index:2;" onerror="this.style.display='none'">
-        </div>
-      </div>
-    </div>
 
     <!-- The four dials -->
     <div style="display:flex; align-items:center; gap: 12px; flex-wrap: wrap; margin-top: 2.2vh;">
@@ -799,7 +864,7 @@ a { color: inherit; }
     <div class="cols" style="align-items: stretch; gap: clamp(12px, 1.8vw, 28px);">
 
       <!-- LEFT third — ONE WEEK IN THE LIFE -->
-      <div class="paper" style="flex: 1 1 0; min-width: 0; transform: rotate(-0.8deg); position: relative; padding: clamp(11px, 1.4vw, 17px); align-self: center;">
+      <div class="paper" style="flex: 0.78 1 0; min-width: 0; transform: rotate(-0.8deg); position: relative; padding: clamp(11px, 1.4vw, 17px); align-self: center;">
         <div class="tape tc"></div>
         <p style="font-family: var(--mono); font-weight: 900; letter-spacing: 2px; font-size: clamp(10px, 1vw, 13px); border-bottom: 2px solid var(--ink); padding-bottom: 5px; margin-bottom: 9px;">ONE WEEK IN THE LIFE</p>
         <div class="todo">
@@ -820,50 +885,64 @@ a { color: inherit; }
         <div class="splash-wrap">
           <div class="splash-track">
           <div class="splash-item">
-            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-1.png</i></div><img src="screenshots/deck/venue-splash-1.png" alt="Venue arrival splash — The Last Regret" onerror="this.style.display='none'"></div>
-            <div class="splash-name" style="font-family:'Special Elite';">The Last Regret</div><div class="splash-info">T1 · 40 cap · local pub</div>
+            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-1.png</i></div><img src="screenshots/deck/venue-splash-1.png" alt="Venue arrival splash &mdash; The Last Regret" onerror="this.style.display='none'"></div>
+            <div class="splash-meta"><div class="splash-name" style="font-family:'Rammetto One';">The Last Regret</div><div class="splash-info">T1 &middot; 40 cap &middot; back-room pub</div><div class="splash-cap">The PA&rsquo;s older than the landlord and held together with tape &mdash; mind the step.</div></div>
           </div>
           <div class="splash-item">
-            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-2.png</i></div><img src="screenshots/deck/venue-splash-2.png" alt="Venue arrival splash — The Borderlands" onerror="this.style.display='none'"></div>
-            <div class="splash-name" style="font-family:'Cinzel';">The Borderlands</div><div class="splash-info">T4 · 350 cap · indie club</div>
+            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-2.png</i></div><img src="screenshots/deck/venue-splash-2.png" alt="Venue arrival splash &mdash; The Tap Room" onerror="this.style.display='none'"></div>
+            <div class="splash-meta"><div class="splash-name" style="font-family:'Rammetto One';">The Tap Room</div><div class="splash-info">T2 &middot; 90 cap &middot; pub venue</div><div class="splash-cap">An actual raised stage &mdash; all six inches of it. The guvnor&rsquo;s got a sound bloke now.</div></div>
           </div>
           <div class="splash-item">
-            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-3.png</i></div><img src="screenshots/deck/venue-splash-3.png" alt="Venue arrival splash — The Pier Ballroom" onerror="this.style.display='none'"></div>
-            <div class="splash-name" style="font-family:'Yeseva One';">The Pier Ballroom</div><div class="splash-info">T5 · 800 cap · ballroom</div>
+            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-3.png</i></div><img src="screenshots/deck/venue-splash-3.png" alt="Venue arrival splash &mdash; Baroque & Roll" onerror="this.style.display='none'"></div>
+            <div class="splash-meta"><div class="splash-name" style="font-family:'Righteous';">Baroque &amp; Roll</div><div class="splash-info">T4 &middot; 450 cap &middot; indie club</div><div class="splash-cap">Under a pun and a glitterball: real lights, real monitors, a rider that runs to sandwiches.</div></div>
           </div>
           <div class="splash-item">
-            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-4.png</i></div><img src="screenshots/deck/venue-splash-4.png" alt="Venue arrival splash — The Minster" onerror="this.style.display='none'"></div>
-            <div class="splash-name" style="font-family:'UnifrakturCook';">The Minster</div><div class="splash-info">T6 · 3,500 cap · civic hall</div>
+            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-4.png</i></div><img src="screenshots/deck/venue-splash-4.png" alt="Venue arrival splash &mdash; Hope and Chain" onerror="this.style.display='none'"></div>
+            <div class="splash-meta"><div class="splash-name" style="font-family:'Righteous';">Hope and Chain</div><div class="splash-info">T5 &middot; 700 cap &middot; music hall</div><div class="splash-cap">A green room with biscuits, security in laminates. Nobody mentions the upgrade &mdash; but everybody clocks it.</div></div>
           </div>
           <div class="splash-item">
-            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-5.png</i></div><img src="screenshots/deck/venue-splash-5.png" alt="Venue arrival splash — The Euphoria" onerror="this.style.display='none'"></div>
-            <div class="splash-name" style="font-family:'Monoton';">The Euphoria</div><div class="splash-info">T6 · 12,000 cap · arena</div>
+            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-5.png</i></div><img src="screenshots/deck/venue-splash-5.png" alt="Venue arrival splash &mdash; The City Hall" onerror="this.style.display='none'"></div>
+            <div class="splash-meta"><div class="splash-name" style="font-family:'Archivo Black';">The City Hall</div><div class="splash-info">T5 &middot; 1,200 cap &middot; civic hall</div><div class="splash-cap">Seated at the back, standing at the front &mdash; and the front&rsquo;s already filling. Run like a civic duty.</div></div>
           </div>
           <div class="splash-item">
-            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-6.png</i></div><img src="screenshots/deck/venue-splash-6.png" alt="Venue arrival splash — Mudbury Festival Ground" onerror="this.style.display='none'"></div>
-            <div class="splash-name" style="font-family:'Rye';">Mudbury Festival Ground</div><div class="splash-info">T7 · 80,000 cap · festival</div>
+            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-6.png</i></div><img src="screenshots/deck/venue-splash-6.png" alt="Venue arrival splash &mdash; The Grandstand" onerror="this.style.display='none'"></div>
+            <div class="splash-meta"><div class="splash-name" style="font-family:'Archivo Black';">The Grandstand</div><div class="splash-info">T6 &middot; 3,000 cap &middot; academy</div><div class="splash-cap">The academy rung at last &mdash; tiered, barriered, the back wall a distant idea.</div></div>
+          </div>
+          <div class="splash-item">
+            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-7.png</i></div><img src="screenshots/deck/venue-splash-7.png" alt="Venue arrival splash &mdash; The Palais" onerror="this.style.display='none'"></div>
+            <div class="splash-meta"><div class="splash-name" style="font-family:'Righteous';">The Palais</div><div class="splash-info">T6 &middot; 6,000 cap &middot; academy</div><div class="splash-cap">An old dancehall&rsquo;s bones, a photo pit with room for a scrum &mdash; the manager signs the laminates herself.</div></div>
+          </div>
+          <div class="splash-item">
+            <div class="splash-pic"><div class="ph-label"><b>SPLASH</b>venue arrival<br><i>venue-splash-8.png</i></div><img src="screenshots/deck/venue-splash-8.png" alt="Venue arrival splash &mdash; The Euphoria" onerror="this.style.display='none'"></div>
+            <div class="splash-meta"><div class="splash-name" style="font-family:'Archivo Black';">The Euphoria</div><div class="splash-info">T6 &middot; 12,000 cap &middot; arena</div><div class="splash-cap">The load-in has a loading bay and a man with a clipboard; from that stage the back row is a rumour.</div></div>
           </div>
           </div><!-- /splash-track -->
         </div><!-- /splash-wrap -->
       </div><!-- /middle third -->
 
-      <!-- RIGHT third — 2×2 receipt cutouts (the week's paper trail) -->
-      <div style="flex: 1 1 0; min-width: 0; align-self: center; display:grid; grid-template-columns: 1fr 1fr; gap: clamp(6px, 0.8vw, 11px);">
-        <div class="shot" style="aspect-ratio: 1; transform: rotate(-0.6deg);">
-          <div class="ph-label"><b>CUTOUT</b>GIG RESULT<br>till receipt — attendance · take<br><i>s6-gig-result.png</i></div>
-          <img src="screenshots/deck/s6-gig-result.png" alt="Gig result — till receipt with attendance, ticket sales and band share" onerror="this.style.display='none'">
-        </div>
-        <div class="shot" style="aspect-ratio: 1; transform: rotate(0.6deg);">
-          <div class="ph-label"><b>CUTOUT</b>WEEKLY ROUNDUP<br>the week's ledger<br><i>s6-weekly-roundup.png</i></div>
-          <img src="screenshots/deck/s6-weekly-roundup.png" alt="Weekly roundup — the week's ledger" onerror="this.style.display='none'">
-        </div>
-        <div class="shot" style="aspect-ratio: 1; transform: rotate(0.5deg);">
-          <div class="ph-label"><b>CUTOUT</b>SALES EMAIL<br>label report on the week's sales<br><i>s6-sales-email.png</i></div>
-          <img src="screenshots/deck/s6-sales-email.png" alt="Sales email — label report on the week's sales" onerror="this.style.display='none'">
-        </div>
-        <div class="shot" style="aspect-ratio: 1; transform: rotate(-0.5deg);">
-          <div class="ph-label"><b>TO CAPTURE</b>RECEIPT 4<br>Dave's pick<br><i>s6-receipt-4.png</i></div>
-          <img src="screenshots/deck/s6-receipt-4.png" alt="Receipt — to be captured" onerror="this.style.display='none'">
+      <!-- RIGHT third - the gig's paper trail: 3 REAL cutouts, REAL ratios. RIGHT (merged,
+           FULL HEIGHT, dominant) = gigcard3, the GIG RECEIPT (BAND TAKES) - the tall card, line
+           items readable. LEFT column = gigcard2 (NMW "The Rattlehouse" review, top) over gigcard1
+           (BEFORE THE GIG feed-them/soundcheck, bottom). Heights off a shared --gch = the receipt's
+           full height; left cards stack to ~match. .shot aspect-ratio, onerror-hide + dashed fallback. -->
+      <div style="flex: 1 1 0; min-width: 0; align-self: center; display:flex; justify-content:center;">
+        <div style="display:flex; gap: clamp(7px, 0.9vw, 13px); align-items:center; --gch: clamp(216px, 35vh, 320px);">
+          <!-- left column: review (top) over before-the-gig (bottom) -->
+          <div style="display:flex; flex-direction:column; gap: clamp(7px, 0.9vw, 13px); align-items:center; justify-content:center;">
+            <div class="shot" style="aspect-ratio: 918 / 938; height: calc(var(--gch) * 0.58); transform: rotate(-1deg);">
+              <div class="ph-label"><b>CUTOUT</b>PRE-GIG REVIEW<br>NMW &middot; The Rattlehouse<br><i>gigcard2.png</i></div>
+              <img src="screenshots/deck/gigcard2.png" alt="Pre-gig review &mdash; NMW listing, The Rattlehouse, three stars" onerror="this.style.display='none'">
+            </div>
+            <div class="shot" style="aspect-ratio: 919 / 562; height: calc(var(--gch) * 0.38); transform: rotate(0.8deg);">
+              <div class="ph-label"><b>CUTOUT</b>BEFORE THE GIG<br>feed them / soundcheck<br><i>gigcard1.png</i></div>
+              <img src="screenshots/deck/gigcard1.png" alt="Before the gig &mdash; feed them or prioritise soundcheck" onerror="this.style.display='none'">
+            </div>
+          </div>
+          <!-- right column: THE RECEIPT, merged full height (dominant element) -->
+          <div class="shot" style="aspect-ratio: 907 / 1314; height: var(--gch); transform: rotate(0.6deg);">
+            <div class="ph-label"><b>CUTOUT</b>GIG RECEIPT<br>BAND TAKES &pound;2,371<br><i>gigcard3.png</i></div>
+            <img src="screenshots/deck/gigcard3.png" alt="Gig receipt &mdash; attendance 835, gate, venue cut, BAND TAKES 2,371 pounds" onerror="this.style.display='none'">
+          </div>
         </div>
       </div>
     </div><!-- /cols (3 thirds) -->
@@ -954,7 +1033,7 @@ a { color: inherit; }
   <div style="max-width: 1280px; margin: 0 auto; width: 100%;">
     <div class="ransom r-story">WEEKLY ROUNDUP · THE NUMBERS</div>
     <!-- v3.4 — slide heading (was the only content slide with no poster H2). One line. -->
-    <h2 class="poster" style="font-family: 'Alfa Slab One', 'Arial Black', sans-serif; font-size: clamp(19px, 2.7vw, 34px); margin: 0.6vh 0 1.4vh;">It works — and nobody's in the lane.</h2>
+    <h2 class="poster" style="font-family: 'Alfa Slab One', 'Arial Black', sans-serif; font-size: clamp(19px, 2.7vw, 34px); margin: 0.6vh 0 1.4vh;">It works &mdash; untapped potential</h2>
     <!-- v3.2 — monthly-statement screenshot block REMOVED; ledger + comparison table breathe. -->
     <div class="cols" style="align-items: stretch;">
       <!-- Ledger -->
@@ -1131,7 +1210,7 @@ a { color: inherit; }
   var track = wrap.querySelector('.splash-track');
   var items = Array.prototype.slice.call(track.children);
   if (!items.length) return;
-  var idx = 0, timer = null, INTERVAL = 3500;
+  var idx = 0, timer = null, INTERVAL = 5000;
   function render() {
     for (var i = 0; i < items.length; i++) items[i].classList.toggle('active', i === idx);
     var it = items[idx];
