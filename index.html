@@ -11,6 +11,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Special+Elite&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Permanent+Marker&family=Archivo:wght@400;500;700&family=Bubblegum+Sans&family=Homemade+Apple&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cinzel:wght@700&family=Abril+Fatface&family=Yeseva+One&family=UnifrakturCook:wght@700&family=Monoton&family=Rye&family=Playfair+Display:wght@800&family=Major+Mono+Display&family=Montserrat:wght@800&family=Righteous&family=Rammetto+One&display=swap" rel="stylesheet">
 <!--
+  DSA PITCH DECK v3.21 (2026-06-21) — S2: LEVEL the three columns to equal height. The trailer was
+  taller than the gig phone + stacked cards, unbalancing the row. Introduced a shared row height
+  --s2h (= min(58vh, 533px), the trailer's existing one-viewport-safe height); the gig phone now
+  height-matches it exactly (.s2gigcol) and the stacked landscape cards scale to fill it (.s2cardcol,
+  width = (--s2h − 48px)/1.276). Trailer unchanged (still the central focus); all three columns ≈
+  equal height now. Mobile still width-based (slide scrolls). Builds on:
   DSA PITCH DECK v3.20 (2026-06-21) — transparent hero/artefact card cutouts: box-shadow → filter
   drop-shadow so the shadow HUGS THE CARD OUTLINE (incl. the portrait protrusion) instead of tracing
   the rectangular image bounds (the phantom-square border). Applied to the 6 RGBA-transparent cutouts
@@ -402,16 +408,27 @@ a { color: inherit; }
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 .cols { display: flex; gap: clamp(16px, 3vw, 44px); align-items: center; }
 .cols > * { min-width: 0; }
-/* v3.16 — S2 trailer embed: portrait 9:16 HERO. Width is the smaller of (a) 86vw,
-   (b) the width that keeps height ≤ 58vh so the slide still fits one viewport, and
-   (c) a 300px cap. aspect-ratio derives the height. Click-to-play (no autoplay). */
-.s2trailer { position: relative; aspect-ratio: 9 / 16; width: min(86vw, 58vh * 0.5625, 300px);
+/* v3.16/v3.21 — S2 trailer embed: portrait 9:16. Height is the shared row height --s2h
+   (= min(58vh, 533px) so the slide still fits one viewport); width derives from aspect-
+   ratio. The gig phone + stacked cards (below) are sized to the SAME --s2h so all three
+   columns are level. Click-to-play (no autoplay). */
+.s2trailer { position: relative; aspect-ratio: 9 / 16; height: var(--s2h, min(58vh, 533px)); width: auto; max-width: 86vw;
   border: 3px solid #FFF; box-shadow: 6px 6px 0 rgba(0,0,0,0.5); background: #000; transform: rotate(-0.6deg); }
 .s2trailer iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
+/* v3.21 — LEVEL the three S2 columns to the trailer height (--s2h): gig phone height-matches
+   exactly; the two stacked LANDSCAPE cards scale to fill it (width chosen so the sum of the two
+   card heights + gap + caption ≈ --s2h; the 1.276 divisor = 1/1.656 + 1/1.488, the two cards'
+   height-per-width). Trailer stays the central focus; the row now reads balanced. */
+.s2gigcol { height: var(--s2h, min(58vh, 533px)); display: flex; align-items: center; }
+.s2gigcol .phone { height: 100%; width: auto; }
+.s2cardcol { width: calc((var(--s2h, min(58vh, 533px)) - 48px) / 1.276); }
 @media (max-width: 820px), (orientation: portrait) {
   .cols { flex-direction: column; align-items: stretch; }
-  /* Phone view: the slide scrolls, so size the trailer by WIDTH (not 58vh). */
-  .s2trailer { width: min(78vw, 300px); transform: none; margin: 0 auto; }
+  /* Phone view: the slide scrolls, so size by WIDTH (drop the --s2h height leveling). */
+  .s2trailer { height: auto; width: min(78vw, 300px); transform: none; margin: 0 auto; }
+  .s2gigcol { height: auto; }
+  .s2gigcol .phone { height: auto; }
+  .s2cardcol { width: min(82vw, 300px); }
   /* Phone: let slides flow top→bottom and GROW with stacked content (body
      scrolls). The base .slide is justify-content:center + overflow:hidden, which
      on a narrow viewport squeezes/clips tall stacked content (aspect-ratio phone
@@ -594,11 +611,12 @@ a { color: inherit; }
     <p style="text-align:center; font-family: var(--mono); color: var(--fz-light-mut); font-size: clamp(11px, 1.1vw, 14px); margin-bottom: 3.5vh;">
       Card-swipe band management. British indie, early 2000s. Demo tapes, sticky floors, no social media or smartphones.</p>
 
-    <!-- v3.17 — column swap: TRAILER on the LEFT (still the HERO — tallest/biggest),
-         gig-night clip in the CENTRE (smaller), choice cards STACKED on the right.
-         The old non-gig GAMEPLAY+HUD phone (hook-story-card) was removed and the
-         standalone trailer CTA replaced by the embed. -->
-    <div class="cols" style="justify-content:center; gap: clamp(14px, 2.6vw, 40px);">
+    <!-- v3.17/v3.21 — TRAILER on the LEFT (the central focus), gig-night clip in the CENTRE,
+         choice cards STACKED on the right. v3.21: the three columns are LEVELLED to a shared
+         height (--s2h) so the row reads balanced — the trailer no longer towers over the others.
+         The old non-gig GAMEPLAY+HUD phone (hook-story-card) was removed; the standalone trailer
+         CTA replaced by the embed. -->
+    <div class="cols" style="justify-content:center; gap: clamp(14px, 2.6vw, 40px); --s2h: min(58vh, 533px);">
       <!-- LEFT (HERO): the trailer — embedded portrait Vimeo player, click-to-play -->
       <div style="flex: 0 0 auto; display:flex; flex-direction:column; align-items:center; gap: 9px;">
         <div class="s2trailer">
@@ -615,9 +633,9 @@ a { color: inherit; }
            style="font-family: var(--mono); font-weight:900; letter-spacing:1.5px; font-size: clamp(9.5px, 1vw, 13px); color: var(--gold); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:1px;">&#9654; WATCH TRAILER FULL SCREEN &middot; 1:13</a>
       </div>
 
-      <!-- CENTRE: gig-night clip (the live-gig hook) — smaller than the trailer hero -->
-      <div class="phones" style="flex: 0 0 auto;">
-        <div class="phone" style="--lean: 2.2deg; width: clamp(118px, 13.5vw, 166px);">
+      <!-- CENTRE: gig-night clip (the live-gig hook) — height-matched to the trailer (.s2gigcol) -->
+      <div class="phones s2gigcol" style="flex: 0 0 auto;">
+        <div class="phone" style="--lean: 2.2deg;">
           <div class="tape tl"></div>
           <div class="screen">
             <div class="ph-label"><b>CLIP</b>HOOK — GIG NIGHT<br>stage lights mid-sweep<br><i>screenshots/deck/hook-gig-night.gif</i></div>
@@ -626,8 +644,8 @@ a { color: inherit; }
         </div>
       </div>
 
-      <!-- RIGHT: the two choice cards, STACKED vertically -->
-      <div style="flex: 0 0 auto; display:flex; flex-direction:column; align-items:center; gap: clamp(8px, 1.1vw, 14px); width: clamp(160px, 18.5vw, 232px);">
+      <!-- RIGHT: the two choice cards, STACKED vertically — scaled to fill the row height (.s2cardcol) -->
+      <div class="s2cardcol" style="flex: 0 0 auto; display:flex; flex-direction:column; align-items:center; gap: clamp(8px, 1.1vw, 14px);">
         <!-- nonhero1.webp - GeoCities/MIDI "commission the site" choice card -->
         <div style="position:relative; box-shadow:0 9px 26px rgba(0,0,0,0.3); transform: rotate(-1.4deg); width:100%;">
           <img src="screenshots/deck/nonhero1.webp" alt="Choice card &mdash; someone's nephew can build a website, the current site is a GeoCities page; keep GeoCities / commission the site" style="display:block; width:100%;" onerror="this.style.display='none'">
