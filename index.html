@@ -11,6 +11,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Special+Elite&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Permanent+Marker&family=Archivo:wght@400;500;700&family=Bubblegum+Sans&family=Homemade+Apple&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cinzel:wght@700&family=Abril+Fatface&family=Yeseva+One&family=UnifrakturCook:wght@700&family=Monoton&family=Rye&family=Playfair+Display:wght@800&family=Major+Mono+Display&family=Montserrat:wght@800&family=Righteous&family=Rammetto+One&display=swap" rel="stylesheet">
 <!--
+  DSA PITCH DECK v3.20 (2026-06-21) — transparent hero/artefact card cutouts: box-shadow → filter
+  drop-shadow so the shadow HUGS THE CARD OUTLINE (incl. the portrait protrusion) instead of tracing
+  the rectangular image bounds (the phantom-square border). Applied to the 6 RGBA-transparent cutouts
+  only — hero1, hero2, artefact-band-card, artefact-deal-card (S4), artefact-ar-verdict (S4b),
+  artefact-crisis-card (S6) — same offset/blur/colour, just outline-based (drop-shadow follows the
+  img alpha). The OPAQUE rectangular cutouts (nonhero, gigcards, obits, chart-page, label-letter,
+  venue-splashes) keep box-shadow — they're real rectangles, so a box shadow is correct there. Builds on:
   DSA PITCH DECK v3.19 (2026-06-21) — S10 trailer link RE-ADDED: a "▶ WATCH TRAILER · 1:13" link
   (vimeo.com/1203223206, target=_blank rel=noopener, gold underlined to match the S2 watch link)
   on the final sign-off slide, between the lede and the contact CTAs — so an end-of-deck reader has
@@ -811,28 +818,29 @@ a { color: inherit; }
 
         <!-- 1 - BAND DRAMA - Stu Wunderbar (the seven-minute one-chord song) -->
         <div style="flex:1 1 0; display:flex; justify-content:center;">
-          <div style="position: relative; background: transparent; padding: 0; box-shadow: 0 9px 26px rgba(0,0,0,0.3); transform: rotate(-0.6deg); width:100%; max-width: 330px;">
+          <div style="position: relative; background: transparent; padding: 0; filter: drop-shadow(0 9px 26px rgba(0,0,0,0.3)); transform: rotate(-0.6deg); width:100%; max-width: 330px;">
             <img src="screenshots/deck/artefact-band-card.webp" alt="Band-dynamics decision card &mdash; Stu Wunderbar; absolutely not / give it a go" style="width:100%; display:block;" onerror="this.style.display='none'">
           </div>
         </div>
 
         <!-- 2 - VENUE OPPORTUNITY - Angie / The Cellar Bar (hero2.webp) -->
         <div style="flex:1 1 0; display:flex; justify-content:center;">
-          <div style="position: relative; background: transparent; padding: 0; box-shadow: 0 9px 26px rgba(0,0,0,0.3); transform: rotate(0.5deg); width:100%; max-width: 330px;">
+          <div style="position: relative; background: transparent; padding: 0; filter: drop-shadow(0 9px 26px rgba(0,0,0,0.3)); transform: rotate(0.5deg); width:100%; max-width: 330px;">
             <img src="screenshots/deck/hero2.webp" alt="Venue opportunity decision card &mdash; Angie at The Cellar Bar; fill the gap / not enough time" style="width:100%; display:block;" onerror="this.style.display='none'">
           </div>
         </div>
 
         <!-- 3 - BAND DRAMA - Izzy Raw fake-feud (hero1.webp) -->
         <div style="flex:1 1 0; display:flex; justify-content:center;">
-          <div style="position: relative; background: transparent; padding: 0; box-shadow: 0 9px 26px rgba(0,0,0,0.3); transform: rotate(-0.5deg); width:100%; max-width: 330px;">
+          <!-- v3.20 — transparent cutout: filter:drop-shadow hugs the card outline (was box-shadow → phantom square). -->
+          <div style="position: relative; background: transparent; padding: 0; filter: drop-shadow(0 9px 26px rgba(0,0,0,0.3)); transform: rotate(-0.5deg); width:100%; max-width: 330px;">
             <img src="screenshots/deck/hero1.webp" alt="Band drama decision card &mdash; Izzy Raw fake feud; apologise publicly / escalate it" style="width:100%; display:block;" onerror="this.style.display='none'">
           </div>
         </div>
 
         <!-- 4 - LABEL OPPORTUNITY - Derek Boyle, the deal (moved from position 2) -->
         <div style="flex:1 1 0; display:flex; justify-content:center;">
-          <div style="position: relative; background: transparent; padding: 0; box-shadow: 0 9px 26px rgba(0,0,0,0.3); transform: rotate(0.6deg); width:100%; max-width: 330px;">
+          <div style="position: relative; background: transparent; padding: 0; filter: drop-shadow(0 9px 26px rgba(0,0,0,0.3)); transform: rotate(0.6deg); width:100%; max-width: 330px;">
             <img src="screenshots/deck/artefact-deal-card.webp" alt="Label opportunity decision card &mdash; Derek Boyle, Compact Recordings; sign the deal" style="width:100%; display:block;" onerror="this.style.display='none'">
           </div>
         </div>
@@ -900,7 +908,7 @@ a { color: inherit; }
       <!-- THE VERDICT — A&R reaction (the world reacts, with a voice) -->
       <div style="flex: 1; display:flex; flex-direction: column; align-items: center; gap: 8px;">
         <span class="stamp st-c-gold" style="align-self:flex-start; font-size: clamp(8px, 0.78vw, 10.5px);">The verdict</span>
-        <div style="position:relative; background: transparent; padding: 0; box-shadow: 0 9px 26px rgba(0,0,0,0.3); transform: rotate(-0.5deg); max-width: clamp(220px, 17vw, 280px);">
+        <div style="position:relative; background: transparent; padding: 0; filter: drop-shadow(0 9px 26px rgba(0,0,0,0.3)); transform: rotate(-0.5deg); max-width: clamp(220px, 17vw, 280px);">
           <img src="screenshots/deck/artefact-ar-verdict.webp" alt="A&R verdict one-sheet — three stars and a pull-quote on the finished EP" style="width:100%; display:block;" onerror="this.style.display='none'">
         </div>
         <p class="cap">written, not a score — every verdict is a sentence</p>
@@ -1058,7 +1066,7 @@ a { color: inherit; }
       <!-- 1 · THE CRISIS — the red zone, a person in trouble -->
       <div style="flex: 0 1 auto; display:flex; flex-direction: column; align-items:center; gap: 9px;">
         <span class="stamp st-c-crisis" style="align-self:flex-start;">1 · The crisis</span>
-        <div style="position:relative; background: transparent; padding: 0; box-shadow: 0 10px 28px rgba(0,0,0,0.5); transform: rotate(-0.8deg);">
+        <div style="position:relative; background: transparent; padding: 0; filter: drop-shadow(0 10px 28px rgba(0,0,0,0.5)); transform: rotate(-0.8deg);">
           <!-- artefact-crisis-card.webp — Len Krav, CRISIS — EGO, red zone border. v3.4 height-driven. -->
           <img src="screenshots/deck/artefact-crisis-card.webp" alt="Crisis card — Len Krav, CRISIS — EGO, red zone border, accommodate or call the bluff" style="height: clamp(300px, 40vh, 410px); width: auto; display:block;" onerror="this.style.display='none'">
         </div>
