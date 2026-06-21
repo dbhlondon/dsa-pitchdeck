@@ -11,6 +11,21 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Special+Elite&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Permanent+Marker&family=Archivo:wght@400;500;700&family=Bubblegum+Sans&family=Homemade+Apple&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cinzel:wght@700&family=Abril+Fatface&family=Yeseva+One&family=UnifrakturCook:wght@700&family=Monoton&family=Rye&family=Playfair+Display:wght@800&family=Major+Mono+Display&family=Montserrat:wght@800&family=Righteous&family=Rammetto+One&display=swap" rel="stylesheet">
 <!--
+  DSA PITCH DECK v3.17 (2026-06-21) — S2 column SWAP (LOCAL ONLY — NOT pushed live; awaiting
+  Dave's verify): trailer embed moved to the LEFT (still the HERO — tallest/biggest via .s2trailer),
+  gig-night clip phone moved to the CENTRE (smaller), stacked choice cards on the right unchanged.
+  Positions only; sizes unchanged so the trailer stays dominant on the left. Builds on:
+  DSA PITCH DECK v3.16 (2026-06-21) — S2 REFLOW + EMBEDDED TRAILER (LOCAL ONLY — NOT pushed
+  live; awaiting Dave's verify of the embed + layout). The trailer is now the slide's HERO: an
+  embedded portrait Vimeo player (player.vimeo.com/video/1203223206, 9:16, click-to-play poster,
+  title/byline/portrait suppressed, dnt=1) centred in the .cols row, flanked by the gig-night clip
+  (left, kept) and the two choice-card screenshots STACKED vertically (right). Removed: the non-gig
+  GAMEPLAY+HUD phone (hook-story-card) and the standalone S2 trailer CTA (replaced by the embed).
+  S10 trailer CTA removed (the S2 embed replaces it). Headline + subhead + "ACTUAL CARDS" line kept.
+  Embed sizing: .s2trailer = portrait 9:16, width min(86vw, 58vh*0.5625, 300px) so it stays ≤58vh
+  on desktop (slide still fits one viewport) and width-capped on phones. Free-Vimeo embed CONFIRMED
+  working via oEmbed (account_type free, embedding allowed); caveat — free tier keeps the small Vimeo
+  logo in the control bar (can't fully unbrand). Builds on:
   DSA PITCH DECK v3.15 (2026-06-21) — trailer link RE-ENABLED (live): the new recut is live at
   vimeo.com/1203223206 (1:13 / 73s, new visual language). Both trailer CTAs — S2 cards slide
   "▶ 73-SECOND TRAILER · vimeo.com/1203223206" + S10 sign-off "▶ TRAILER · vimeo.com/1203223206" —
@@ -369,8 +384,16 @@ a { color: inherit; }
 /* ── Responsive ─────────────────────────────────────────────────────────── */
 .cols { display: flex; gap: clamp(16px, 3vw, 44px); align-items: center; }
 .cols > * { min-width: 0; }
+/* v3.16 — S2 trailer embed: portrait 9:16 HERO. Width is the smaller of (a) 86vw,
+   (b) the width that keeps height ≤ 58vh so the slide still fits one viewport, and
+   (c) a 300px cap. aspect-ratio derives the height. Click-to-play (no autoplay). */
+.s2trailer { position: relative; aspect-ratio: 9 / 16; width: min(86vw, 58vh * 0.5625, 300px);
+  border: 3px solid #FFF; box-shadow: 6px 6px 0 rgba(0,0,0,0.5); background: #000; transform: rotate(-0.6deg); }
+.s2trailer iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; display: block; }
 @media (max-width: 820px), (orientation: portrait) {
   .cols { flex-direction: column; align-items: stretch; }
+  /* Phone view: the slide scrolls, so size the trailer by WIDTH (not 58vh). */
+  .s2trailer { width: min(78vw, 300px); transform: none; margin: 0 auto; }
   /* Phone: let slides flow top→bottom and GROW with stacked content (body
      scrolls). The base .slide is justify-content:center + overflow:hidden, which
      on a narrow viewport squeezes/clips tall stacked content (aspect-ratio phone
@@ -553,55 +576,44 @@ a { color: inherit; }
     <p style="text-align:center; font-family: var(--mono); color: var(--fz-light-mut); font-size: clamp(11px, 1.1vw, 14px); margin-bottom: 3.5vh;">
       Card-swipe band management. British indie, early 2000s. Demo tapes, sticky floors, no social media or smartphones.</p>
 
-    <div class="cols">
-      <!-- Two phone screenshots — gig night LEADS (the fun, then the format) -->
-      <div class="phones" style="flex: 1; display: flex; gap: clamp(10px, 1.5vw, 22px); justify-content: center;">
-        <div class="phone" style="--lean: -2deg; max-width: 220px;">
+    <!-- v3.17 — column swap: TRAILER on the LEFT (still the HERO — tallest/biggest),
+         gig-night clip in the CENTRE (smaller), choice cards STACKED on the right.
+         The old non-gig GAMEPLAY+HUD phone (hook-story-card) was removed and the
+         standalone trailer CTA replaced by the embed. -->
+    <div class="cols" style="justify-content:center; gap: clamp(14px, 2.6vw, 40px);">
+      <!-- LEFT (HERO): the trailer — embedded portrait Vimeo player, click-to-play -->
+      <div style="flex: 0 0 auto; display:flex; flex-direction:column; align-items:center; gap: 9px;">
+        <div class="s2trailer">
+          <iframe src="https://player.vimeo.com/video/1203223206?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
+                  allow="fullscreen; picture-in-picture; clipboard-write"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  title="Difficult Second Album — trailer (1:13)"></iframe>
+        </div>
+        <p style="font-family: var(--mono); font-weight:900; letter-spacing:2px; font-size: clamp(10px, 1.05vw, 14px); color: var(--fz-light-body); margin:0;">&#9654; THE TRAILER &middot; 1:13</p>
+      </div>
+
+      <!-- CENTRE: gig-night clip (the live-gig hook) — smaller than the trailer hero -->
+      <div class="phones" style="flex: 0 0 auto;">
+        <div class="phone" style="--lean: 2.2deg; width: clamp(118px, 13.5vw, 166px);">
           <div class="tape tl"></div>
           <div class="screen">
-            <div class="ph-label"><b>CLIP</b>HOOK — GIG NIGHT<br>stage lights mid-sweep over the venue, BOX 1 on top<br><i>screenshots/deck/hook-gig-night.gif</i></div>
-            <!-- hook-gig-night.jpg — gig screen mid-performance, lighting beams visible,
-                 large club / mid hall, band name + date chip readable. THE fun image. -->
+            <div class="ph-label"><b>CLIP</b>HOOK — GIG NIGHT<br>stage lights mid-sweep<br><i>screenshots/deck/hook-gig-night.gif</i></div>
             <img src="screenshots/deck/hook-gig-night.gif" alt="Gig night — live performance with stage lighting sweeping the venue (looping clip)" onerror="this.style.display='none'">
-          </div>
-        </div>
-        <div class="phone" style="--lean: 1.6deg; max-width: 220px; margin-top: 3vh;">
-          <div class="tape tr"></div>
-          <div class="screen">
-            <div class="ph-label"><b>SCREENSHOT</b>HOOK — GAMEPLAY + HUD<br>full paper HUD over a card (awards full-HUD stand-in)<br><i>screenshots/deck/hook-story-card.webp</i></div>
-            <!-- hook-story-card.jpg — decision card on the dark fanzine surface, hero
-                 portrait + name tab, stamped boxes, cream BOX 1 + post-its + heads.
-                 Week 8-15, one member's bar drifting amber. -->
-            <img src="screenshots/deck/hook-story-card.webp" alt="Gameplay with full paper HUD — band name, date, funds, reputation, member post-its over a card" onerror="this.style.display='none'">
           </div>
         </div>
       </div>
 
-      <!-- The card, rendered as the game renders it -->
-      <div style="flex: 1.15;">
-        <!-- v3.9 - two NON-HERO choice-card cutouts (real captures; floating cutouts, S4 convention). -->
-        <div style="display:flex; gap: clamp(10px, 1.4vw, 18px); justify-content:center; align-items:center; max-width: 500px; margin: 0 auto;">
-          <div style="flex:1 1 0; min-width:0; display:flex; justify-content:center;">
-            <div style="position:relative; background:transparent; padding:0; box-shadow:0 9px 26px rgba(0,0,0,0.3); transform: rotate(-1deg); width:100%;">
-              <!-- nonhero1.webp - GeoCities/MIDI "commission the site" choice card -->
-              <img src="screenshots/deck/nonhero1.webp" alt="Choice card &mdash; someone's nephew can build a website, the current site is a GeoCities page; keep GeoCities / commission the site" style="display:block; width:100%;" onerror="this.style.display='none'">
-            </div>
-          </div>
-          <div style="flex:1 1 0; min-width:0; display:flex; justify-content:center;">
-            <div style="position:relative; background:transparent; padding:0; box-shadow:0 9px 26px rgba(0,0,0,0.3); transform: rotate(1deg); width:100%;">
-              <!-- nonhero2.webp - band-name-meaning "make something up" choice card -->
-              <img src="screenshots/deck/nonhero2.webp" alt="Choice card &mdash; a journalist asks what the band name means; it doesn't mean anything / make something up" style="display:block; width:100%;" onerror="this.style.display='none'">
-            </div>
-          </div>
+      <!-- RIGHT: the two choice cards, STACKED vertically -->
+      <div style="flex: 0 0 auto; display:flex; flex-direction:column; align-items:center; gap: clamp(8px, 1.1vw, 14px); width: clamp(160px, 18.5vw, 232px);">
+        <!-- nonhero1.webp - GeoCities/MIDI "commission the site" choice card -->
+        <div style="position:relative; box-shadow:0 9px 26px rgba(0,0,0,0.3); transform: rotate(-1.4deg); width:100%;">
+          <img src="screenshots/deck/nonhero1.webp" alt="Choice card &mdash; someone's nephew can build a website, the current site is a GeoCities page; keep GeoCities / commission the site" style="display:block; width:100%;" onerror="this.style.display='none'">
         </div>
-        <p style="text-align:center; font-family: var(--mono); font-size: clamp(9px, 0.85vw, 11px); color: var(--fz-light-mut); margin-top: 10px; letter-spacing: 1px;">ACTUAL CARDS. EVERY DECISION LOOKS LIKE THIS.</p>
-
-        <div style="display:flex; justify-content:center; margin-top: 3vh;">
-          <!-- v3.15 — trailer link re-enabled, pointing at the new recut (vimeo.com/1203223206, 1:13). -->
-          <a href="https://vimeo.com/1203223206" target="_blank" rel="noopener"
-             style="text-decoration:none; background: rgba(18,16,22,0.9); border: 2px solid #FFF; color: #FFF; font-family: var(--mono); font-weight: 900; letter-spacing: 2px; font-size: clamp(12px, 1.3vw, 17px); padding: 12px 26px; transform: rotate(-1.8deg); box-shadow: 4px 4px 0 rgba(0,0,0,0.5); display:inline-block;">
-            ▶ 73-SECOND TRAILER · vimeo.com/1203223206</a>
+        <!-- nonhero2.webp - band-name-meaning "make something up" choice card -->
+        <div style="position:relative; box-shadow:0 9px 26px rgba(0,0,0,0.3); transform: rotate(1.4deg); width:100%;">
+          <img src="screenshots/deck/nonhero2.webp" alt="Choice card &mdash; a journalist asks what the band name means; it doesn't mean anything / make something up" style="display:block; width:100%;" onerror="this.style.display='none'">
         </div>
+        <p style="text-align:center; font-family: var(--mono); font-size: clamp(8px, 0.78vw, 10.5px); color: var(--fz-light-mut); margin-top: 4px; letter-spacing: 1px;">ACTUAL CARDS. EVERY<br>DECISION LOOKS LIKE THIS.</p>
       </div>
     </div>
   </div>
@@ -1242,12 +1254,7 @@ a { color: inherit; }
   <div class="wrap" style="max-width: 1100px; margin: 0 auto; width: 100%; text-align: center; display:flex; flex-direction: column; align-items: center; gap: 2.6vh;">
     <h2 class="poster" style="font-family: 'Alfa Slab One', 'Arial Black', sans-serif; font-size: clamp(28px, 4.6vw, 56px); color: var(--fz-light-body); line-height: 1.04;">The offer won't<br>last forever.<br>They might<br>even mean it.</h2>
     <p class="lede" style="font-style: italic; color: var(--fz-light-mut); font-size: clamp(14px, 1.5vw, 20px);">This one will. And we do.</p>
-    <div>
-      <!-- v3.15 — trailer link re-enabled, pointing at the new recut (vimeo.com/1203223206, 1:13). -->
-      <a href="https://vimeo.com/1203223206" target="_blank" rel="noopener"
-         style="text-decoration:none; background: rgba(18,16,22,0.9); border: 2px solid #FFF; color: #FFF; font-family: var(--mono); font-weight: 900; letter-spacing: 2px; font-size: clamp(12px, 1.3vw, 17px); padding: 12px 26px; transform: rotate(-1.6deg); box-shadow: 4px 4px 0 rgba(0,0,0,0.5); display:inline-block;">
-        ▶ TRAILER · vimeo.com/1203223206</a>
-    </div>
+    <!-- v3.16 — S10 trailer CTA removed: the embedded trailer on S2 replaces it. -->
     <div style="font-family: var(--mono); font-size: clamp(11px, 1.2vw, 16px); letter-spacing: 1px;">
       <div style="color: var(--fz-light-mut); margin-bottom: 4px;">TestFlight (iOS) · APK (Android) · same day you ask</div>
       <a href="mailto:dhawkins.uk@gmail.com" style="color: var(--gold); text-decoration: none; font-weight: 700; font-size: clamp(13px, 1.4vw, 19px);">dhawkins.uk@gmail.com</a>
