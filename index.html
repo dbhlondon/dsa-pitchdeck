@@ -11,6 +11,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Special+Elite&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Permanent+Marker&family=Archivo:wght@400;500;700&family=Bubblegum+Sans&family=Homemade+Apple&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cinzel:wght@700&family=Abril+Fatface&family=Yeseva+One&family=UnifrakturCook:wght@700&family=Monoton&family=Rye&family=Playfair+Display:wght@800&family=Major+Mono+Display&family=Montserrat:wght@800&family=Righteous&family=Rammetto+One&display=swap" rel="stylesheet">
 <!--
+  DSA PITCH DECK v3.19 (2026-06-21) — S10 trailer link RE-ADDED: a "▶ WATCH TRAILER · 1:13" link
+  (vimeo.com/1203223206, target=_blank rel=noopener, gold underlined to match the S2 watch link)
+  on the final sign-off slide, between the lede and the contact CTAs — so an end-of-deck reader has
+  the trailer to hand. The S2 embed stays the inline hero. Builds on:
   DSA PITCH DECK v3.18 (2026-06-21) — S2 trailer embed: ENABLE FULLSCREEN + add a watch link. The
   iframe was missing the legacy `allowfullscreen` boolean attribute (so the player's fullscreen
   control was disabled even though allow="fullscreen" was set) — added it + rounded out `allow`
@@ -1266,7 +1270,12 @@ a { color: inherit; }
   <div class="wrap" style="max-width: 1100px; margin: 0 auto; width: 100%; text-align: center; display:flex; flex-direction: column; align-items: center; gap: 2.6vh;">
     <h2 class="poster" style="font-family: 'Alfa Slab One', 'Arial Black', sans-serif; font-size: clamp(28px, 4.6vw, 56px); color: var(--fz-light-body); line-height: 1.04;">The offer won't<br>last forever.<br>They might<br>even mean it.</h2>
     <p class="lede" style="font-style: italic; color: var(--fz-light-mut); font-size: clamp(14px, 1.5vw, 20px);">This one will. And we do.</p>
-    <!-- v3.16 — S10 trailer CTA removed: the embedded trailer on S2 replaces it. -->
+    <!-- v3.19 — trailer link on the final slide (the S2 embed stays the inline hero; this gives an
+         end-of-deck reader the trailer to hand alongside the contact CTAs). Matches the S2 watch link. -->
+    <div>
+      <a href="https://vimeo.com/1203223206" target="_blank" rel="noopener"
+         style="font-family: var(--mono); font-weight:900; letter-spacing:1.5px; font-size: clamp(11px, 1.2vw, 16px); color: var(--gold); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:2px;">&#9654; WATCH TRAILER &middot; 1:13</a>
+    </div>
     <div style="font-family: var(--mono); font-size: clamp(11px, 1.2vw, 16px); letter-spacing: 1px;">
       <div style="color: var(--fz-light-mut); margin-bottom: 4px;">TestFlight (iOS) · APK (Android) · same day you ask</div>
       <a href="mailto:dhawkins.uk@gmail.com" style="color: var(--gold); text-decoration: none; font-weight: 700; font-size: clamp(13px, 1.4vw, 19px);">dhawkins.uk@gmail.com</a>
