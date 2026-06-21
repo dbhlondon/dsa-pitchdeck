@@ -11,6 +11,13 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Special+Elite&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Permanent+Marker&family=Archivo:wght@400;500;700&family=Bubblegum+Sans&family=Homemade+Apple&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cinzel:wght@700&family=Abril+Fatface&family=Yeseva+One&family=UnifrakturCook:wght@700&family=Monoton&family=Rye&family=Playfair+Display:wght@800&family=Major+Mono+Display&family=Montserrat:wght@800&family=Righteous&family=Rammetto+One&display=swap" rel="stylesheet">
 <!--
+  DSA PITCH DECK v3.18 (2026-06-21) — S2 trailer embed: ENABLE FULLSCREEN + add a watch link. The
+  iframe was missing the legacy `allowfullscreen` boolean attribute (so the player's fullscreen
+  control was disabled even though allow="fullscreen" was set) — added it + rounded out `allow`
+  (encrypted-media; web-share). Added an explicit "▶ WATCH TRAILER FULL SCREEN · 1:13" link under the
+  embed (vimeo.com/1203223206, target=_blank rel=noopener, gold underlined) — replaces the decorative
+  "THE TRAILER · 1:13" caption — so the embed plays inline and the link gives a proper full-screen
+  watch on Vimeo. Builds on:
   DSA PITCH DECK v3.17 (2026-06-21) — S2 column SWAP (LOCAL ONLY — NOT pushed live; awaiting
   Dave's verify): trailer embed moved to the LEFT (still the HERO — tallest/biggest via .s2trailer),
   gig-night clip phone moved to the CENTRE (smaller), stacked choice cards on the right unchanged.
@@ -584,12 +591,17 @@ a { color: inherit; }
       <!-- LEFT (HERO): the trailer — embedded portrait Vimeo player, click-to-play -->
       <div style="flex: 0 0 auto; display:flex; flex-direction:column; align-items:center; gap: 9px;">
         <div class="s2trailer">
+          <!-- v3.18 — added the legacy `allowfullscreen` boolean attribute (some browsers gate the
+               fullscreen control on it even when allow="fullscreen" is set) + rounded out `allow`. -->
           <iframe src="https://player.vimeo.com/video/1203223206?title=0&amp;byline=0&amp;portrait=0&amp;dnt=1"
-                  allow="fullscreen; picture-in-picture; clipboard-write"
+                  allow="fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+                  allowfullscreen
                   referrerpolicy="strict-origin-when-cross-origin"
                   title="Difficult Second Album — trailer (1:13)"></iframe>
         </div>
-        <p style="font-family: var(--mono); font-weight:900; letter-spacing:2px; font-size: clamp(10px, 1.05vw, 14px); color: var(--fz-light-body); margin:0;">&#9654; THE TRAILER &middot; 1:13</p>
+        <!-- v3.18 — explicit full-screen watch link (opens the trailer on Vimeo in a new tab). -->
+        <a href="https://vimeo.com/1203223206" target="_blank" rel="noopener"
+           style="font-family: var(--mono); font-weight:900; letter-spacing:1.5px; font-size: clamp(9.5px, 1vw, 13px); color: var(--gold); text-decoration:none; border-bottom:1px solid var(--gold); padding-bottom:1px;">&#9654; WATCH TRAILER FULL SCREEN &middot; 1:13</a>
       </div>
 
       <!-- CENTRE: gig-night clip (the live-gig hook) — smaller than the trailer hero -->
