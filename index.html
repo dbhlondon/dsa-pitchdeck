@@ -11,6 +11,75 @@
 <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bebas+Neue&family=Special+Elite&family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Permanent+Marker&family=Archivo:wght@400;500;700&family=Bubblegum+Sans&family=Homemade+Apple&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Cinzel:wght@700&family=Abril+Fatface&family=Yeseva+One&family=UnifrakturCook:wght@700&family=Monoton&family=Rye&family=Playfair+Display:wght@800&family=Major+Mono+Display&family=Montserrat:wght@800&family=Righteous&family=Rammetto+One&display=swap" rel="stylesheet">
 <!--
+  DSA PITCH DECK v3.28 (2026-06-23) — SYNCED LIVE. The held-local stream (v3.18–v3.27: roadmap
+  slide s7b, S3/S5/S6 copy edits, slide-8 de-dup pass) is now PUSHED to the public dsa-pitchdeck
+  repo / GitHub Pages — screenshots are placed, so the "waiting for screenshots / LOCAL ONLY" hold
+  is lifted (the "not pushed live" flags on the v3.18–v3.27 entries below are historical). Trailer
+  hygiene: the dead retired-trailer URL has been stripped from these notes — only the live
+  vimeo.com/1203223206 appears anywhere now. Builds on:
+  DSA PITCH DECK v3.27 (2026-06-22) — ROADMAP SLIDE (s7b) DEV-STAGES REFRAME + SPLIT BOXES —
+  LOCAL ONLY, not pushed live. Boxes now tell the DEVELOPMENT journey using the game's phase
+  names as the shared vocabulary, and each box is SPLIT into two labelled halves: "IN
+  DEVELOPMENT" (the dev stage, sans) over "IN GAME" (the band's story, serif italic), divided
+  by a dashed rule — so dev journey and game journey share one timeline. FOUR boxes (Launch
+  dropped; Legacy = launch-prep): Formation (Mar 2026) / Rising (~Apr–Jun, current) / Peak
+  (~next months) / Legacy (~final months → launch). Per-box DATE + status-tag row under each
+  coloured header. "Live on iOS+Android, in testers' hands" moved into the Rising box. The
+  YOU-ARE-HERE marker is now VERTICAL (writing-mode vertical-rl, reading down) + narrow,
+  sitting at Rising. New CSS: .rmmeta/.rmdate/.rmlabel(.dev/.game)/.rmtext(.game)/.rmsplit;
+  removed .rmsub + .rmbody ul/li + the .rmhere .sub line. Builds on:
+  DSA PITCH DECK v3.26 (2026-06-22) — ROADMAP SLIDE (s7b) header + vivid phases + honest
+  launch + EXPANDED production to-do — LOCAL ONLY, not pushed live. (1) Header → "Playable
+  now — here's the plan." (2) ALL SIX phase headers are vivid category ransom blocks +
+  matching coloured box borders (Formation blue / Rising teal / Peak purple / Legacy gold /
+  Launch red); status reads from the TAG only (BUILT green / TO BUILD outlined), not from
+  draining future-phase colour. (3) Launch honest: "Mobile first. PC & Switch ports to be
+  evaluated." (4) Production work surfaced PROMINENTLY in the boxes (overloaded detail-tags
+  removed → clean "To build" status): Launch is now the get-it-launch-ready phase carrying
+  the cross-cutting production list (commissioned art/music · final balance pass · editorial
+  pass across 900+ cards · platform evaluation · polish & store prep) under a "what the
+  funding builds" sub-head; Launch box widened (flex 1.7). New .rmsub heading style; dropped
+  the .rmbox.todo head/border overrides. Builds on:
+  DSA PITCH DECK v3.25 (2026-06-22) — ROADMAP SLIDE (s7b) LIGHT BOXES for readability —
+  LOCAL ONLY, not pushed live. All six phase boxes switched to CREAM/paper (var(--cream)/
+  (--cream-2)) with dark-ink text — the v3.23/24 future boxes were dark/dashed on the dark
+  slide bg, so Peak/Legacy/Launch text was unreadable. Done-vs-todo now reads from the
+  HEADER + TAG only: DONE = category-coloured ransom header (white knockout) + solid green
+  BUILT / BUILT·PLAYABLE NOW tag; TO-COME = dashed ink-cap outline header + outlined muted
+  TO-BUILD tag. Bullets → darker gold (--h-gold) and the Peak "gamble" lead-in → risk-red
+  (--ink-minus) for contrast on cream. Box content unchanged; the gold YOU-ARE-HERE seam
+  (on the dark bg between groups) unchanged. Builds on:
+  DSA PITCH DECK v3.24 (2026-06-22) — ROADMAP SLIDE (s7b) FULLER BOXES + dissolved panels —
+  LOCAL ONLY, not pushed live. Phase boxes now carry real detail: DONE boxes are bulleted
+  feature lists (Rising = the fullest: labels & deals / charts indie+national / crises &
+  departures / awards Brut+NMW / publicity stunts / Battle of the Bands), AHEAD boxes are
+  short prose lines. REMOVED the separate "THE YEARS AHEAD" band — its chase→survive /
+  tour-gamble copy now lives INSIDE Peak ("The gamble — spend big to pack the house, or
+  overreach and bankrupt the band") and Legacy. STILL TO BUILD dissolved into the per-box
+  "to build" tags (detail in the boxes, not a footer list); only the ~6+6-month gold figure
+  remains as footer. Boxes much taller (min-height ~46vh) + bullet CSS (.rmbody ul/li,
+  .gamble) added; .rmaheadrow CSS removed. Builds on:
+  DSA PITCH DECK v3.23 (2026-06-22) — ROADMAP SLIDE (s7b) TIMELINE-AS-HERO rework — LOCAL
+  ONLY, not pushed live. The timeline is now the full-width hero: ONE continuous flow of
+  six phase BOXES (Formation / Rising / ◆ gold YOU-ARE-HERE seam / Peak / Legacy / Launch),
+  each box carrying its own detail. DONE phases solid + category-coloured + ✓ + green BUILT
+  tag; AHEAD phases dashed-outline/dimmed (= to come) so done-vs-todo reads along the
+  timeline itself. The "where it goes next" hook folds into a band aligned under the ahead
+  stretch ("THE YEARS AHEAD"); "still to build" folds into a slim footer line beside the
+  ~6+6-month figure. Replaces the v3.22 thin-spine + two-separate-panels layout (which
+  fragmented it / left the timeline too small). New .rm* CSS (rmflow/rmbox/rmhead/rmbody/
+  rmtag/rmhere/rmaheadrow) replaced the old spine .rm* rules. Builds on:
+  DSA PITCH DECK v3.22 (2026-06-22) — NEW ROADMAP SLIDE (s7b) — LOCAL ONLY, not pushed
+  live; awaiting Dave's verify of density + final placement. Adds a roadmap beat between
+  S7 ("it works") and S8 ("the ask"): a factual velocity line (no commit numbers), a
+  horizontal phase-timeline SPINE (Formation ✓ — Rising ✓ — ◆ gold YOU-ARE-HERE diamond —
+  Peak — Legacy — Launch, each with a tight desc; built track = solid gold, future track =
+  dashed/muted, future marks = dashed hollow squares), a "WHERE IT GOES NEXT" forward hook
+  (serif lede + "Touring framework designed" stamp), a "STILL TO BUILD" todo list, and a
+  funded-dev footer figure (~6mo dev + ~6mo support, gold stamps). Built ENTIRELY in the
+  deck's existing language (ransom header, .paper props, .stamp/.todo, --mono/--poster/
+  --serif, tape corners, datechip "NO. 8½"); scoped .rm* CSS added after .todo. No existing
+  slide renumbered; nav is .slide-querying so it picks the slide up automatically. Builds on:
   DSA PITCH DECK v3.21 (2026-06-21) — S2: LEVEL the three columns to equal height. The trailer was
   taller than the gig phone + stacked cards, unbalancing the row. Introduced a shared row height
   --s2h (= min(58vh, 533px), the trailer's existing one-viewport-safe height); the gig phone now
@@ -55,12 +124,12 @@
   "▶ 73-SECOND TRAILER · vimeo.com/1203223206" + S10 sign-off "▶ TRAILER · vimeo.com/1203223206" —
   are clickable again (solid white-bordered fanzine button, was the v3.14 dashed "◷ NEW TRAILER IN
   PRODUCTION" placeholder); length updated 75s→73s to match the 1:13 cut. The old trailer
-  (vimeo.com/1189590096) is fully retired — NO route to it remains anywhere. Builds on:
+  (old URL now dead/removed) is fully retired — NO route to it remains anywhere. Builds on:
   DSA PITCH DECK v3.14 (2026-06-18) — trailer link DISABLED (deck source only; not re-promoted
-  to live): the old trailer (vimeo.com/1189590096) is in the old visual language and undercuts the
+  to live): the old trailer (old URL now dead/removed) is in the old visual language and undercuts the
   new deck, so both clickable trailer CTAs (S2 cards slide "75-SECOND TRAILER" + S10 sign-off
   "TRAILER") are replaced with a non-clickable muted/dashed "◷ NEW TRAILER IN PRODUCTION" state
-  (reads as coming, not broken). NO route to vimeo.com/1189590096 remains anywhere. Builds on:
+  (reads as coming, not broken). NO route to the old trailer remains anywhere. Builds on:
   DSA PITCH DECK v3.13 (2026-06-18) — S9 velocity frame (deck source only; not re-promoted to
   live): the CURRENT STATE line now states the build duration so it reads against the remaining
   estimate — "built in roughly three months, solo" inserted right after "play end to end right
@@ -388,6 +457,60 @@ h1.poster, h2.poster, h3.poster { font-family: var(--poster); text-transform: up
 .todo p { font-family: var(--mono); font-size: clamp(10px, 1vw, 13px); line-height: 1.4; margin-bottom: 5px; color: var(--ink-body); }
 .todo span { color: var(--ink-plus); font-weight: 900; }
 
+/* ── Roadmap slide (s7b) — the TIMELINE is the hero: one full-width flow of phase
+   BOXES, each carrying its own detail. DONE phases (Formation/Rising) read solid +
+   category-coloured + ✓; AHEAD phases (Peak/Legacy/Launch) read outline/dimmed = to
+   come; a gold YOU-ARE-HERE seam pivots done→ahead between Rising and Peak. Built in
+   the deck's artefact language (ransom headers, Special Elite, stamps, gold). */
+.rmflow { display: flex; align-items: stretch; gap: clamp(5px, 0.7vw, 11px); margin: 1vh 0 1.4vh; }
+/* ALL boxes are CREAM/paper with dark ink — so every line reads on the dark slide.
+   EVERY box is cream + has a vivid category-coloured header; status (built vs to-do) is
+   shown by the TAG only, never by draining colour from the future phases. */
+.rmbox { flex: 1; min-width: 0; display: flex; flex-direction: column; border-radius: 3px;
+  padding: clamp(11px, 1.3vw, 18px); min-height: clamp(220px, 46vh, 400px); position: relative;
+  background: var(--cream-2); color: var(--ink-body); border: 1.5px solid var(--paper-border);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3); }
+.rmbox.done { background: var(--cream); }   /* done boxes a touch warmer; status reads off the TAG */
+/* phase header block — vivid category ransom (white knockout) on ALL phases */
+.rmhead { align-self: flex-start; font-family: var(--mono); font-weight: 900; text-transform: uppercase;
+  letter-spacing: 1.5px; font-size: clamp(12px, 1.3vw, 17px); color: #FFF; padding: 4px 11px;
+  transform: rotate(-1.2deg); box-shadow: 2.5px 2.5px 0 rgba(0,0,0,0.3); margin-bottom: 8px; }
+/* date + status-tag row under the header */
+.rmmeta { display: flex; flex-wrap: wrap; align-items: center; gap: 5px 8px; margin-bottom: 11px; }
+.rmdate { font-family: var(--mono); font-size: clamp(8px, 0.82vw, 10.5px); letter-spacing: 1px; color: var(--ink-cap); text-transform: uppercase; }
+/* split halves — TOP = "in development" (sans), BOTTOM = "in game" (serif italic, the fiction voice) */
+.rmlabel { font-family: var(--mono); font-weight: 900; text-transform: uppercase; letter-spacing: 1.5px;
+  font-size: clamp(7px, 0.72vw, 9px); margin-bottom: 4px; }
+.rmlabel.dev { color: var(--ink); }
+.rmlabel.game { color: var(--ink-cap); }
+.rmtext { font-family: var(--sans); font-size: clamp(10px, 1.0vw, 13.5px); line-height: 1.4; color: var(--ink-body); }
+/* small italic framing note (Peak "the completion work funding enables", per-box status gloss) */
+.rmnote { font-family: var(--mono); font-style: italic; font-size: clamp(7px, 0.7vw, 9px);
+  letter-spacing: 0.4px; color: var(--ink-cap); text-transform: none; }
+.rmtext.game { font-family: var(--serif); font-style: italic; }
+.rmsplit { border-top: 1px dashed var(--paper-border); margin: 10px 0; }
+.rmtext .gamble { font-family: var(--mono); font-weight: 900; font-style: normal; letter-spacing: 0.5px;
+  color: var(--ink-minus); text-transform: uppercase; font-size: 0.9em; }
+.rmtag { font-family: var(--mono); font-weight: 900; text-transform: uppercase;
+  letter-spacing: 1px; font-size: clamp(7.5px, 0.8vw, 10.5px); padding: 3px 8px; border-radius: 0; transform: rotate(-1.5deg);
+  background: var(--ink); color: var(--cream); box-shadow: 2px 2px 0 rgba(0,0,0,0.28); }
+/* DONE = solid green filled stamp; TO-BUILD = outlined muted stamp (distinct at a glance) */
+.rmtag.built { background: var(--ink-plus); color: #EAF6EC; }
+.rmtag.todo { background: transparent; border: 1.5px dashed var(--ink-cap); color: var(--ink-cap); box-shadow: none; transform: none; }
+/* gold VERTICAL YOU-ARE-HERE marker, sits at Rising (current stage), text reading down */
+.rmhere { flex: 0 0 auto; width: clamp(38px, 4vw, 56px); display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 11px; position: relative; }
+.rmhere::before { content: ''; position: absolute; top: 5%; bottom: 5%; left: 50%; width: 2px;
+  background: repeating-linear-gradient(180deg, var(--gold) 0 6px, transparent 6px 12px); opacity: 0.7; }
+.rmhere .dia { position: relative; z-index: 1; width: clamp(20px, 2vw, 28px); height: clamp(20px, 2vw, 28px);
+  background: var(--gold); transform: rotate(45deg); box-shadow: 2.5px 2.5px 0 rgba(0,0,0,0.32); }
+/* rotated 180° from the writing-mode default (reads up the column); solid dark bg + padding
+   so the dotted timeline line is BROKEN around the text (no overlap / unreadable run-through) */
+.rmhere .lbl { position: relative; z-index: 1; writing-mode: vertical-rl; text-orientation: mixed;
+  transform: rotate(180deg); background: var(--fz-dark); padding: 12px 1px;
+  font-family: var(--mono); font-weight: 900; color: var(--gold); font-size: clamp(8.5px, 0.9vw, 12px);
+  letter-spacing: 2px; text-transform: uppercase; line-height: 1; }
+
 /* Comp table (NMW pastiche) */
 .comp { width: 100%; border-collapse: collapse; }
 .comp th { font-family: var(--mono); font-size: clamp(8px, 0.75vw, 10px); letter-spacing: 1px; text-align: left; color: var(--pub-red); border-bottom: 2px solid var(--ink); padding: 5px 6px; }
@@ -579,7 +702,7 @@ a { color: inherit; }
     </div>
     <!-- v3.2 — landscape/PC/Switch flash on its OWN centred line (gold), not a 5th peer stamp. -->
     <div style="display:flex; justify-content:center; margin-bottom: 2.2vh;">
-      <span class="stamp st-c-gold" style="transform: rotate(-0.8deg); font-size: clamp(9px, 0.95vw, 12px); letter-spacing: 2px; box-shadow: 3px 3px 0 rgba(0,0,0,0.35);">★ Landscape mode in dev · PC + Switch 2 in scope</span>
+      <span class="stamp st-c-gold" style="transform: rotate(-0.8deg); font-size: clamp(9px, 0.95vw, 12px); letter-spacing: 2px; box-shadow: 3px 3px 0 rgba(0,0,0,0.35);">★ Landscape mode in dev · PC + Switch 2 to be evaluated</span>
     </div>
 
     <div style="display:flex; justify-content:center;">
@@ -739,12 +862,12 @@ a { color: inherit; }
           </div>
           <div style="flex: 1; min-width: 220px; display:flex; flex-direction: column; gap: 12px;">
             <p class="lede" style="font-size: clamp(14px, 1.5vw, 19px); color: var(--ink-body);">
-              You hold the auditions. Four of them walk out of the room and into your band — each one a strength,
-              a flaw, and a very firm opinion about the setlist.</p>
+              You hold the auditions. Four of them walk out of the room and into your band. Each has their strengths,
+              their weaknesses, and firm opinions about the set list.</p>
             <p class="lede" style="font-size: clamp(12px, 1.25vw, 15.5px); color: var(--ink-body); font-style: italic;">
               <strong>31 artists you almost recognise</strong>, from the kid who plays till he bleeds to the
               legend whose hospitality standards exceed your budget. You build the lineup; they bring the egos.
-              900+ cards, one deadpan narrator, and no version of any week that keeps all four of them happy.</p>
+              900+ cards, one deadpan narrator, and the impossible task of keeping all four of them happy.</p>
             <div><span class="artnote">Portrait art: AI placeholder — commissioned illustration on funding.</span></div>
           </div>
         </div>
@@ -781,9 +904,9 @@ a { color: inherit; }
           <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/gwennie_stef.webp" alt="Gwennie Stef"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Gwennie Stef</div><div class="cara-arch st-c-stunt">THE HIRED HAND</div></div><div class="cara-line">The voice, the look, the work rate — and opinions she won't hold.</div></div></div>
           <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/rick_swagger.webp" alt="Rick Swagger"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Rick Swagger</div><div class="cara-arch st-c-rec">THE LEGACY ACT</div></div><div class="cara-line">Forty years of stagecraft — and forty years of opinions.</div></div></div>
           <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/pj_harte.webp" alt="PJ Harte"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">PJ Harte</div><div class="cara-arch st-c-gold">THE TALENT</div></div><div class="cara-line">Doesn't perform, just is. Writes what she needs, not what you do.</div></div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/izzy_raw.webp" alt="Izzy Raw"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Izzy Raw</div><div class="cara-arch st-c-crisis">THE LOOSE CANNON</div></div><div class="cara-line">Plays till he bleeds. The body has opinions.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/izzy_raw.webp" alt="Izzy Raw"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Izzy Raw</div><div class="cara-arch st-c-crisis">THE LOOSE CANNON</div></div><div class="cara-line">Plays till he bleeds, has opinions.</div></div></div>
           <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/skinn.webp" alt="Skinn"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Skinn</div><div class="cara-arch st-c-story">THE QUIET ONE</div></div><div class="cara-line">Steps over the line, then tells you exactly what she thinks.</div></div></div>
-          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/fats.webp" alt="Big Man Little"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Big Man Little</div><div class="cara-arch st-c-stunt">THE HIRED HAND</div></div><div class="cara-line">Does it without fuss. His good nights, your early starts.</div></div></div>
+          <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/fats.webp" alt="Big Man Little"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Big Man Little</div><div class="cara-arch st-c-stunt">THE HIRED HAND</div></div><div class="cara-line">Does it without fuss. Great at night, not so much in the morning.</div></div></div>
           <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/john_tomes.webp" alt="John Tomes"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">John Tomes</div><div class="cara-arch st-c-rec">THE LEGACY ACT</div></div><div class="cara-line">Fills any room. His hospitality standards exceed your budget.</div></div></div>
           <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/the_artist.webp" alt="The Artist"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">The Artist</div><div class="cara-arch st-c-gold">THE TALENT</div></div><div class="cara-line">Plays everything, owns everything. Non-negotiable.</div></div></div>
           <div class="cara-item"><div class="cara-pol"><img src="assets/portraits/amy_wino_house.webp" alt="Amy Winer"></div><div class="cara-txt"><div class="cara-row"><div class="cara-name">Amy Winer</div><div class="cara-arch st-c-crisis">THE LOOSE CANNON</div></div><div class="cara-line">Voice like a bruise. The pub is always closer.</div></div></div>
@@ -889,13 +1012,12 @@ a { color: inherit; }
   <div style="max-width: 1280px; margin: 0 auto; width: 100%;">
     <div style="display:flex; align-items:baseline; gap: 18px; flex-wrap: wrap; margin-bottom: 1vh;">
       <div class="ransom r-rec">THE RECORD · MAKE IT, THEN HEAR THE VERDICT</div>
-      <span class="stamp st-c-stunt">Every sleeve procedurally generated per release</span>
+      <span class="stamp st-c-stunt">Every sleeve procedurally generated</span>
     </div>
-    <h2 class="poster" style="font-family: 'Alfa Slab One', 'Arial Black', sans-serif; font-size: clamp(20px, 3.0vw, 40px); margin-bottom: 0.6vh;">Make the record.<br>Find out what it's worth.</h2>
+    <h2 class="poster" style="font-family: 'Alfa Slab One', 'Arial Black', sans-serif; font-size: clamp(20px, 3.0vw, 40px); margin-bottom: 0.6vh;">Make the records.<br>Chase the charts.</h2>
     <p class="lede" style="font-size: clamp(13px, 1.4vw, 18px); color: var(--ink-body); max-width: 900px; margin-bottom: 2vh;">
-      You name it, sleeve it, press it — and <b>the cover art is generated for you</b>, different sleeves for every
-      release, so no two playthroughs look the same. Then the label's A&amp;R tells you what they
-      think of it.</p>
+      Record it, press it, pick the cover art — different sleeve for every release. Then the label's A&amp;R tells you
+      what they think.</p>
 
     <!-- v3.2 — 4-up bare cutouts: make it → press it → the verdict → see how it sells.
          Step 1 unwrapped from its phone frame to a bare cutout (the regen GIF keeps moving). -->
@@ -929,18 +1051,18 @@ a { color: inherit; }
         <div style="position:relative; background: transparent; padding: 0; filter: drop-shadow(0 9px 26px rgba(0,0,0,0.3)); transform: rotate(-0.5deg); max-width: clamp(220px, 17vw, 280px);">
           <img src="screenshots/deck/artefact-ar-verdict.webp" alt="A&R verdict one-sheet — three stars and a pull-quote on the finished EP" style="width:100%; display:block;" onerror="this.style.display='none'">
         </div>
-        <p class="cap">written, not a score — every verdict is a sentence</p>
+        <p class="cap">Feedback from the label</p>
       </div>
 
       <!-- THE CHARTS — the chart (reuse the existing chart asset) -->
       <div style="flex: 1; display:flex; flex-direction: column; align-items: center; gap: 8px;">
-        <span class="stamp st-c-story" style="align-self:flex-start; font-size: clamp(8px, 0.78vw, 10.5px);">The charts</span>
+        <span class="stamp st-c-story" style="align-self:flex-start; font-size: clamp(8px, 0.78vw, 10.5px);">The Charts</span>
         <div style="position:relative; background: transparent; padding: 0; box-shadow: 0 9px 26px rgba(0,0,0,0.3); transform: rotate(1deg); max-width: clamp(220px, 17vw, 280px);">
           <div class="tape tr"></div>
           <!-- artefact-chart-page.webp — NMW indie chart page, player row gold-edged mid-table. -->
           <img src="screenshots/deck/artefact-chart-page.webp" alt="NMW chart page — player row gold-edged mid-table" style="width:100%; display:block;" onerror="this.style.display='none'">
         </div>
-        <p class="cap">then the chart says what it was worth</p>
+        <p class="cap">Where you find out what the public think</p>
       </div>
     </div>
   </div>
@@ -961,7 +1083,7 @@ a { color: inherit; }
       <div class="ransom r-gig">GIG NIGHT · CHART DAY · THE ROAD</div>
       <span class="stamp st-c-gig" style="font-size: clamp(8px, 0.78vw, 10px);">The venues are characters too</span>
     </div>
-    <h2 class="poster" style="font-family: 'Alfa Slab One', 'Arial Black', sans-serif; font-size: clamp(20px, 3.0vw, 40px); margin-bottom: 0.6vh;">Saturday is a show.<br>Sunday is a verdict.</h2>
+    <h2 class="poster" style="font-family: 'Alfa Slab One', 'Arial Black', sans-serif; font-size: clamp(20px, 3.0vw, 40px); margin-bottom: 0.6vh;">Saturday, a show.<br>Sunday, the roundup.</h2>
     <p class="lede" style="font-size: clamp(13px, 1.4vw, 18px); color: var(--ink-body); max-width: 880px; margin-bottom: 0.5vh;">
       The indie chart. The national chart. And one day, if you hold it together — tour your new album. You climb it
       a venue at a time, from a pub that takes a fifth of the door to stages that the greats have graced.</p>
@@ -1060,7 +1182,7 @@ a { color: inherit; }
 .cap { font-family: var(--mono); font-size: clamp(8.5px, 0.85vw, 11px); color: var(--ink-cap); text-align: center; margin-top: 8px; letter-spacing: 0.5px; }
 </style>
 
-<!-- ════════ SLIDE 6 — CRISIS AND LEGACY (dark — two things that are one thing) ════════ -->
+<!-- ════════ SLIDE 7 — CRISIS AND LEGACY (dark — two things that are one thing) · NO. 7 chip ════════ -->
 <section class="slide dark" id="s6">
   <div class="bgstrip">
     <img src="assets/backgrounds/van_2.webp" alt="">
@@ -1128,7 +1250,7 @@ a { color: inherit; }
   </div>
 </section>
 
-<!-- ════════ SLIDE 7 — IT WORKS + THE GAP (thinky brain) ════════ -->
+<!-- ════════ SLIDE 8 — IT WORKS + THE GAP (thinky brain) · NO. 8 chip ════════ -->
 <section class="slide" id="s7">
   <div class="bgstrip">
     <img src="assets/backgrounds/studio_budget1.webp" alt="">
@@ -1209,7 +1331,133 @@ a { color: inherit; }
   </div>
 </section>
 
-<!-- ════════ SLIDE 8 — ASK + CLOSE (dark fanzine bookend) ════════ -->
+<!-- ════════ SLIDE 8b — THE ROADMAP (dark; sits between IT WORKS and THE ASK) · NO. 8½ chip ════════
+     v3.27 (LOCAL ONLY — not pushed live). DEV-STAGES REFRAME + SPLIT BOXES. The boxes now
+     tell DAVE'S development journey in the game's own phase vocabulary, and each box is SPLIT
+     into two labelled halves — "IN DEVELOPMENT" (dev stage, sans) over "IN GAME" (the band's
+     story, serif italic) — separated by a dashed divider, so the dual meaning is explicit.
+     FOUR boxes now (Launch box dropped — Legacy IS launch-prep): Formation (Mar 2026 · Built)
+     / Rising (~Apr–Jun · Built · playable now) / Peak (~next months · To build) / Legacy
+     (~final months → launch · To build). DATES added per box (mono date + status tag row
+     under each coloured header). The "live on iOS+Android, in testers' hands" line moved into
+     the Rising box. YOU-ARE-HERE marker is now VERTICAL (writing-mode rl, reading down) and
+     narrow, sitting at Rising. Builds on:
+     v3.26 (LOCAL ONLY — not pushed live). (1) Header now "Playable now — here's the plan."
+     (was "Built fast. Far from finished." — undersold). (2) ALL SIX phase headers are vivid
+     category ransom blocks now (Formation blue / Rising teal / Peak purple / Legacy gold /
+     Launch red) + matching box borders — future phases no longer mono/outline; built-vs-todo
+     reads from the TAG only (BUILT green vs TO BUILD outlined). (3) Launch is HONEST: "Mobile
+     first. PC & Switch ports to be evaluated." (was "PC+mobile simultaneous / Switch in
+     progress"). (4) Production work is now PROMINENT, not in tags: the overloaded "to build ·
+     X" tags are gone (clean "To build" status only); Launch became the get-it-launch-ready
+     phase carrying the cross-cutting PRODUCTION list (commissioned art/music · final balance
+     pass · editorial pass · platform eval · polish & store prep) under a "what the funding
+     builds" sub-head — so the slide answers "what does funding buy?". Launch box widened
+     (flex 1.7). Builds on:
+     v3.25 (LOCAL ONLY — not pushed live). READABILITY: all six phase boxes are now CREAM/
+     paper with dark ink (were dark/outlined on the dark slide bg → future-box text was
+     unreadable). Done-vs-todo now lives in the HEADER + TAG, not box darkness: DONE keep the
+     category-coloured ransom header (white knockout) + solid green BUILT tag; TO-COME get a
+     dashed ink-outline header + an outlined muted TO-BUILD tag. Content unchanged. Builds on:
+     v3.24 (LOCAL ONLY — not pushed live). FULLER BOXES + dissolved the separate band: the
+     phase boxes now carry real detail (bulleted feature lists on the DONE boxes — Rising is
+     the fullest: labels/charts/crises/awards/stunts/BotB — and short prose lines on the
+     AHEAD boxes). The separate "THE YEARS AHEAD" panel is REMOVED; its chase&rarr;survive /
+     tour-gamble copy now lives INSIDE Peak ("The gamble — spend big… or bankrupt the band")
+     and Legacy. STILL TO BUILD dissolved into the box "to build" tags (per Dave: detail IN
+     the boxes), so the only footer is the ~6+6-month figure. Boxes much taller (min-height
+     ~46vh) so the timeline fills the slide. Builds on v3.23 (timeline-as-hero). -->
+<section class="slide dark" id="s7b">
+  <div class="bgstrip">
+    <img src="assets/backgrounds/stadium1.webp" alt="">
+    <img src="assets/backgrounds/general_stars_1.webp" alt="">
+    <img src="assets/backgrounds/stadium1.webp" alt="">
+  </div>
+  <div class="datechip">NO. 8&frac12; · THE ROAD AHEAD</div>
+
+  <div style="max-width: 1280px; margin: 0 auto; width: 100%;">
+    <div class="ransom r-gold">THE ROADMAP</div>
+    <h2 class="poster" style="font-family: 'Alfa Slab One', 'Arial Black', sans-serif; font-size: clamp(19px, 2.7vw, 34px); color: var(--fz-light-body); margin: 0.5vh 0 0.6vh;">Playable now &mdash; here&rsquo;s the plan.</h2>
+    <!-- VELOCITY LINE — factual, confident, no commit numbers -->
+    <p style="font-family: var(--mono); font-size: clamp(9px, 0.95vw, 12.5px); letter-spacing: 0.4px; color: var(--fz-light-mut); line-height: 1.5; margin-bottom: 1.4vh;">
+      Built solo since March 2026 &mdash; playable core in weeks, full system set by late spring. Regular tester builds on Android&nbsp;+&nbsp;iOS.</p>
+
+    <!-- TIMELINE — THE HERO: 4 phase boxes telling BOTH the dev journey (top half) and the
+         band's journey (bottom half) in one shared phase vocabulary. Vertical YOU-ARE-HERE
+         marker at Rising (current stage). No separate Launch box — Legacy IS launch-prep. -->
+    <div class="rmflow">
+      <!-- FORMATION -->
+      <div class="rmbox done" style="border-color: var(--h-story);">
+        <div class="rmhead" style="background: var(--h-story);">Formation</div>
+        <div class="rmmeta"><span class="rmdate">Mar 2026</span><span class="rmtag built">Built</span></div>
+        <div class="rmhalf">
+          <div class="rmlabel dev">In development</div>
+          <div class="rmtext">Early design &amp; prototyping<br>Card engine<br>Core loop<br>First systems</div>
+        </div>
+        <div class="rmsplit"></div>
+        <div class="rmhalf">
+          <div class="rmlabel game">In game</div>
+          <div class="rmtext game">Pick the band<br>Practice &amp; songwriting choices<br>First gigs<br>Sign your first label</div>
+        </div>
+      </div>
+      <!-- RISING — current stage -->
+      <div class="rmbox done" style="border-color: var(--h-rec);">
+        <div class="rmhead" style="background: var(--h-rec);">Rising</div>
+        <div class="rmmeta"><span class="rmdate">~Apr&ndash;Jun 2026</span><span class="rmtag built">Built &middot; playable now</span></div>
+        <div class="rmhalf">
+          <div class="rmlabel dev">In development</div>
+          <div class="rmtext">Rounding out features<br>Deepening systems<br>Defining game style &amp; UI<br>Playable end-to-end, in testers&rsquo; hands</div>
+        </div>
+        <div class="rmsplit"></div>
+        <div class="rmhalf">
+          <div class="rmlabel game">In game</div>
+          <div class="rmtext game">Record EPs &amp; albums<br>Release &amp; chart the music<br>Publicity stunts<br>Gigs in larger venues<br>Band crises<br>Industry awards<br>Battle of the Bands</div>
+        </div>
+      </div>
+      <!-- YOU ARE HERE — vertical gold marker at Rising (current stage) -->
+      <div class="rmhere">
+        <div class="dia"></div>
+        <div class="lbl">You Are Here</div>
+      </div>
+      <!-- PEAK -->
+      <div class="rmbox todo" style="border-color: var(--h-gig);">
+        <div class="rmhead" style="background: var(--h-gig);">Peak</div>
+        <div class="rmmeta"><span class="rmdate">~Next months</span><span class="rmtag todo">To build</span><span class="rmnote">&mdash; what funding brings</span></div>
+        <div class="rmhalf">
+          <div class="rmlabel dev">In development</div>
+          <div class="rmtext">Commissioned art (replace placeholders)<br>Commissioned music<br>Peak &amp; Legacy content &amp; touring system<br>Editorial pass (900+ cards)<br>Landscape mode (PC / Switch)</div>
+        </div>
+        <div class="rmsplit"></div>
+        <div class="rmhalf">
+          <div class="rmlabel game">In game</div>
+          <div class="rmtext game">UK tours to promote albums &mdash; <span class="gamble">the gamble:</span> pack the house or bankrupt the band<br>Manage success &amp; the egos that come with it<br>Fame turns from chasing it to managing it</div>
+        </div>
+      </div>
+      <!-- LEGACY — launch-prep -->
+      <div class="rmbox todo" style="border-color: var(--h-gold);">
+        <div class="rmhead" style="background: var(--h-gold);">Legacy</div>
+        <div class="rmmeta"><span class="rmdate">~Final months &rarr; launch</span><span class="rmtag todo">To build</span></div>
+        <div class="rmhalf">
+          <div class="rmlabel dev">In development</div>
+          <div class="rmtext">Final pre-launch work<br>Playtesting to refine balance<br>Final card sign-off<br>Polish<br>PC &amp; Switch evaluation</div>
+        </div>
+        <div class="rmsplit"></div>
+        <div class="rmhalf">
+          <div class="rmlabel game">In game</div>
+          <div class="rmtext game">World tours<br>Break America<br>The legacy years<br>Holding it together at the top</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER — funded-dev figure -->
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 0.6vh;">
+      <span class="stamp st-c-gold" style="font-size: clamp(8.5px, 0.9vw, 11.5px);">~6 months funded development to launch</span>
+      <span class="stamp st-c-gold" style="font-size: clamp(8.5px, 0.9vw, 11.5px); transform: rotate(1.5deg);">~6 months post-release support</span>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 9 — ASK + CLOSE (dark fanzine bookend) · NO. 9 chip ════════ -->
 <section class="slide dark" id="s8">
   <div class="bgstrip">
     <img src="assets/backgrounds/general_stars_1.webp" alt="">
@@ -1232,8 +1480,7 @@ a { color: inherit; }
           <p class="lede" style="font-size: clamp(11px, 1.1vw, 14px); color: var(--ink-body); line-height: 1.6;">
             David Hawkins is a solo developer with a systems-engineering background, old enough to have lived
             the era the game is set in. One man&rsquo;s vision, start to finish &mdash; every card, system and
-            decision shaped and signed off by one person, for a single consistent voice. Placeholder art and
-            music now; commissioned illustration and original music are part of the ask.
+            decision shaped and signed off by one person, for a single consistent voice.
             The way he works is half the pitch: a bug reported in the morning is often fixed and live to
             testers by the afternoon.</p>
           <div style="display:flex; gap: 8px; flex-wrap: wrap; margin-top: 10px;">
@@ -1246,11 +1493,8 @@ a { color: inherit; }
           <div class="tape tr"></div>
           <div class="ransom r-rec" style="margin-bottom: 8px;">CURRENT STATE</div>
           <p class="lede" style="font-size: clamp(11px, 1.1vw, 14px); color: var(--ink-body); line-height: 1.6;">
-            Formation and Rising play end to end right now — built in roughly three months, solo. Live on
-            iOS and Android at the v0.9.0 preview, with an economy tuned against a thousand simulation runs.
-            Roughly six months from
-            content-complete: Peak and Legacy content, commissioned art and music, and a Steam / Switch&nbsp;2
-            port assessment to follow, with landscape mode already in development.</p>
+            Formation and Rising play end to end right now — in testers&rsquo; hands on iOS and Android, with an
+            economy tuned against a thousand simulation runs. The remaining work is in the ask.</p>
         </div>
       </div>
 
